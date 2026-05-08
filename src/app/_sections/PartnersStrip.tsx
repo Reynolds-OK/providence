@@ -78,10 +78,7 @@ export default function PartnersStrip() {
           variants={itemVariants}
           className="mx-auto max-w-xl font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]"
         >
-          Our work has been recognized and supported by international
-          institutions invested in sustainable agriculture and rural economic
-          development across sub-Saharan Africa. These partnerships allow us to
-          reach more farmers and deliver even greater impact on the ground.
+          We are proud to have earned the confidence of leading agricultural development institutions. Their support validates our model, accelerates our capacity, and fuels our shared mission of transforming agriculture in Cameroon and across the continent.
         </motion.p>
       </motion.div>
     </section>

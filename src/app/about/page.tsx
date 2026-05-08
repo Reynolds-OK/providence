@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
@@ -87,17 +89,6 @@ function GrowthMindsetIcon() {
   );
 }
 
-function AfricanPrideIcon() {
-  return (
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Stylised Africa outline */}
-      <path d="M18 5 L22 5 L24 8 L26 8 L28 11 L27 15 L29 18 L28 22 L26 26 L24 30 L21 34 L19 34 L17 31 L15 28 L13 24 L12 20 L13 16 L12 13 L14 10 L16 8 Z" stroke="#8B0000" strokeWidth="1.75" strokeLinejoin="round" />
-      {/* Star */}
-      <path d="M20 16 L21 19 L24 19 L21.5 21 L22.5 24 L20 22 L17.5 24 L18.5 21 L16 19 L19 19 Z" fill="#8B0000" />
-    </svg>
-  );
-}
-
 /* ─── Data ───────────────────────────────────────────────────────────────── */
 
 const values = [
@@ -105,58 +96,52 @@ const values = [
     Icon: IntegrityIcon,
     title: "Integrity",
     description:
-      "We operate transparently and honestly in every transaction, partnership, and conversation. Our word is our bond, and our work reflects it.",
+      "We do what we say. Every product we deliver and every advice we give is backed by honesty and accountability.",
   },
   {
     Icon: CommunityFirstIcon,
     title: "Community First",
     description:
-      "As a Common Initiative Group, our identity is rooted in service. We exist to lift the communities around us — through employment, knowledge, and fair commerce.",
+      "Agriculture is not just an industry to us. It is the lifeblood of the communities we serve. Their prosperity is our prosperity, and their growth is our growth.",
   },
   {
     Icon: PrecisionIcon,
     title: "Precision",
     description:
-      "From feed nutrient ratios to poultry management schedules, we approach every task with data-informed care. Good farming is both art and science.",
+      "We bring careful thinking and informed decision-making to everything we do, whether it's formulating feed or advising on a business plan.",
   },
   {
     Icon: SustainabilityIcon,
     title: "Sustainability",
     description:
-      "We farm in ways that protect the land for future generations — responsible input use, waste reduction, and practices that keep ecosystems intact.",
+      "We farm and operate with the future in mind, for the land, the animals, and the farmers who come after us.",
   },
   {
     Icon: GrowthMindsetIcon,
     title: "Growth Mindset",
     description:
-      "We are perpetual learners. We invest in training, welcome new research, and constantly refine our methods to stay ahead in a changing agricultural landscape.",
-  },
-  {
-    Icon: AfricanPrideIcon,
-    title: "African Pride",
-    description:
-      "We celebrate our roots. Our solutions are designed for African realities — culturally aware, locally grounded, and proud of what the continent's agriculture can achieve.",
+      "We believe every farmer has the potential to scale what they have built. Our role is to provide the tools, the knowledge, and the encouragement to make that a reality.",
   },
 ];
 
 const team = [
   {
-    initials: "AN",
-    name: "Dr. A. Nkemdirim",
-    title: "Director & Agronomist",
-    bio: "Over 15 years leading commercial agribusiness operations across West Africa.",
+    initials: "FD",
+    name: "FD",
+    title: "Founder & Director",
+    bio: "Leads strategy, partnerships, and the overall vision of Providence CIG.",
   },
   {
-    initials: "PF",
-    name: "Ms. P. Fontem",
-    title: "Head of Nutrition",
-    bio: "Animal nutritionist specializing in custom feed formulation for smallholder and commercial farms.",
+    initials: "FB",
+    name: "FB",
+    title: "Finance & Business Development Lead",
+    bio: "Drives financial planning, partnerships, and growth strategy.",
   },
   {
-    initials: "EC",
-    name: "Mr. E. Chiabi",
-    title: "Advisory Lead",
-    bio: "Agribusiness consultant, certified trainer, and farmer advocate with a decade of field experience.",
+    initials: "OM",
+    name: "OM",
+    title: "Operations Manager",
+    bio: "Coordinates logistics, supplier networks, and on-site execution.",
   },
 ];
 
@@ -200,9 +185,17 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-r from-[#1c1c1e] to-[#2d1a1a]">
-        {/* subtle texture overlay */}
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[#8B0000] opacity-5" />
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/about-hero.webp"
+          fill
+          className="object-cover"
+          alt="Providence CIG farm"
+        />
+
+        {/* Dark overlay */}
+        <div aria-hidden="true" className="absolute inset-0 bg-black/65" />
 
         {/* crosshatch grid overlay */}
         <div
@@ -231,7 +224,7 @@ export default function AboutPage() {
             animate="visible"
             className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
           >
-            Providence Common Initiative Group &nbsp;|&nbsp; Bambui, Cameroon
+            ABOUT US
           </motion.p>
 
           <motion.h1
@@ -243,7 +236,7 @@ export default function AboutPage() {
           >
             More Than a Business.
             <br />
-            A Mission in Motion.
+            But Driven by Something Bigger.
           </motion.h1>
 
           <motion.p
@@ -253,9 +246,8 @@ export default function AboutPage() {
             animate="visible"
             className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-300 md:text-xl"
           >
-            We did not start Providence CIG to simply run a farm. We started it
-            to prove that African agriculture — grounded in science, integrity,
-            and community — can feed, employ, and uplift an entire region.
+            We are an agricultural enterprise driven by purpose, producing food,
+            empowering farmers, and building a stronger agri-economy.
           </motion.p>
         </div>
       </section>
@@ -296,28 +288,29 @@ export default function AboutPage() {
             {/* Right col — body copy */}
             <motion.div variants={childFade} className="space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#1a1a1a]">
               <p>
-                Providence Common Initiative Group began as a conversation among
-                farmers, advisors, and community leaders in the North-West
-                Region of Cameroon. We saw a recurring pattern: smallholder
-                farmers with the will to grow, but without access to quality
-                inputs, reliable markets, or practical guidance they could trust.
-                We decided to be the answer to that gap.
+                Our journey started with a simple but powerful observation: too many farmers
+                in Cameroon&apos;s North West Region were working harder than ever, yet still
+                struggling to grow. Feed was expensive and generic. Poultry markets were
+                unreliable. And the business knowledge that separates a small farm from a
+                thriving enterprise was simply out of reach for most people in our communities.
               </p>
               <p>
-                Registered as a Common Initiative Group, our structure is
-                intentional — we are not a distant corporation but a collective
-                rooted in the communities we serve. From day one, our operations
-                in commercial poultry production, custom animal feed formulation,
-                and agricultural business advisory have been guided by one
-                principle: that every farmer who works with us should leave
-                better equipped than when they arrived.
+                We started Providence Common Initiative Group to change that. What began as a
+                community-driven initiative in Bambui has grown into an integrated agribusiness
+                serving retailers, wholesalers, and farmers across the region. Today, we produce
+                eggs and broilers at commercial scale, formulate custom animal feed for all major
+                livestock types, and offer business advisory services to farmers who are ready to
+                take the next step.
               </p>
               <p>
-                Today, backed by international development partners including
-                MCF FAST and the ACE programme, Providence CIG is growing — in
-                scale, in reach, and in impact. But we have never lost sight of
-                where we started: a commitment to farming done with purpose, for
-                the long-term benefit of Cameroon&apos;s agricultural future.
+                Our name says everything about who we are. Providence, because we believe in
+                guided purpose. Common Initiative, because we believe no farmer should have to
+                figure it out alone. Group, because community is the foundation of everything we
+                build.
+              </p>
+              <p>
+                We are not perfect. But we are committed, to quality, to our clients, and to the
+                communities that agriculture sustains.
               </p>
             </motion.div>
           </motion.div>
@@ -335,16 +328,14 @@ export default function AboutPage() {
               variants={childFade}
               className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-white/60 uppercase"
             >
-              Our Mission
+              MISSION
             </motion.p>
             <motion.p
               variants={childFade}
               className="font-[family-name:var(--font-playfair)] text-xl font-semibold leading-relaxed text-white md:text-2xl"
             >
-              To produce and supply quality poultry products and customized
-              animal feed while providing practical agricultural advisory that
-              empowers farmers, strengthens local food systems, and drives
-              sustainable economic growth across our communities.
+              To produce quality poultry products, formulate effective animal feed, and work
+              closely with farmers who are ready to grow.
             </motion.p>
           </AnimatedSection>
         </div>
@@ -356,17 +347,14 @@ export default function AboutPage() {
               variants={childFade}
               className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-white/60 uppercase"
             >
-              Our Vision
+              VISION
             </motion.p>
             <motion.p
               variants={childFade}
               className="font-[family-name:var(--font-playfair)] text-xl font-semibold leading-relaxed text-white md:text-2xl"
             >
-              To become a leading agribusiness collective in Central and West
-              Africa — recognized for agricultural excellence, trusted as a
-              knowledge hub for farmers, and celebrated as a model of
-              community-driven enterprise that proves African agriculture can
-              feed itself and the world.
+              A future where farming is a viable and rewarding livelihood for every farmer we
+              work with and every community we serve.
             </motion.p>
           </AnimatedSection>
         </div>
@@ -430,15 +418,15 @@ export default function AboutPage() {
             {/* Header */}
             <motion.div variants={childFade} className="mb-14">
               <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
-                The People Behind the Work
+                THE PEOPLE BEHIND THE WORK
               </p>
               <h2 className="max-w-2xl font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 A Team That Knows Agriculture from the Inside Out.
               </h2>
               <p className="mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
-                Every member of our team brings direct field experience. We do
-                not advise from an office — we work alongside farmers, study the
-                land, and earn our knowledge the hard way.
+                Our team brings together expertise in agronomy, animal nutrition, veterinary
+                science, and business management. We are practitioners first. Every
+                recommendation we make is grounded in real experience, not just theory.
               </p>
             </motion.div>
 
@@ -454,9 +442,6 @@ export default function AboutPage() {
                   <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#8B0000] text-lg font-bold text-white font-[family-name:var(--font-playfair)] shadow-md">
                     {initials}
                   </div>
-                  <h3 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-[#1c1c1e]">
-                    {name}
-                  </h3>
                   <p className="mt-1 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-wide text-[#8B0000] uppercase">
                     {title}
                   </p>
@@ -484,7 +469,7 @@ export default function AboutPage() {
             {/* Header */}
             <motion.div variants={childFade} className="mb-14">
               <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
-                Our Partners
+                OUR PARTNERS
               </p>
               <h2 className="max-w-2xl font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 Backed by Leaders in Agricultural Development.
@@ -512,14 +497,10 @@ export default function AboutPage() {
                     MCF FAST (Micro-Credit Foundation — Farmer Agri-Support Training)
                   </h3>
                   <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
-                    MCF FAST is a microfinance and capacity-building programme
-                    that supports emerging agricultural enterprises in sub-Saharan
-                    Africa. Through their partnership with Providence CIG, they
-                    have provided access to working capital, financial literacy
-                    training, and structured mentorship that has helped us scale
-                    our operations sustainably. Their investment in our team has
-                    directly translated into improved farm productivity, stronger
-                    record-keeping practices, and a more resilient supply chain.
+                    The MCF FAST programme recognized Providence CIG as a high-impact, scalable
+                    solution for smallholder farmer empowerment and commercial agri-production.
+                    Their backing has accelerated our operational capacity and extended our reach
+                    across the region.
                   </p>
                 </div>
               </motion.div>
@@ -543,21 +524,27 @@ export default function AboutPage() {
                     ACE (Agricultural Capacity and Entrepreneurship Programme)
                   </h3>
                   <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
-                    The ACE programme connects agricultural businesses with
-                    international expertise, certification pathways, and regional
-                    market linkages. As an ACE-affiliated enterprise, Providence
-                    CIG has benefited from technical training in modern agronomy,
-                    access to certified seed and feed ingredient suppliers, and
-                    exposure to broader export-readiness standards. This
-                    partnership reinforces our commitment to excellence and
-                    positions us as a benchmark agribusiness in the North-West
-                    Region of Cameroon.
+                    Our partnership with ACE has connected us to a broader network of agricultural
+                    entrepreneurs, development institutions, investors, and changemakers,
+                    strengthening both our operations and the quality of our advisory programmes.
                   </p>
                 </div>
               </motion.div>
             </div>
           </motion.div>
         </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════════════
+          CTA
+      ══════════════════════════════════════════════════════════════════ */}
+      <section className="bg-[#8B0000] py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: "var(--font-playfair)" }}>
+          Want to Partner With Us?
+        </h2>
+        <Link href="/contact" className="inline-flex items-center gap-2 border-2 border-white text-white font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-[#8B0000] transition-colors mt-4">
+          Get in Touch
+        </Link>
       </section>
     </>
   );

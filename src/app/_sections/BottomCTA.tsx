@@ -8,9 +8,7 @@ export default function BottomCTA() {
           Ready to Work With Us?
         </h2>
         <p className="mx-auto mt-5 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-white/80">
-          Whether you need a reliable egg supplier, a custom feed formulation
-          for your flock, or expert guidance to grow your farming business —
-          we are here, and we are ready. Let us start the conversation.
+          Whether you need a reliable poultry supplier, a precision-formulated feed solution, or expert business guidance for your farm, we are here and we are ready.
         </p>
         <div className="mt-10">
           <Link

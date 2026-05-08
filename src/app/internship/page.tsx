@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
@@ -130,32 +131,32 @@ const experiences = [
   {
     Icon: BarnIcon,
     title: "Poultry Operations",
-    desc: "Work alongside our production team in day-to-day layer and broiler management — biosecurity, feeding schedules, health monitoring, and record-keeping.",
+    desc: "Hands-on participation in managing laying hen and broiler operations. Learn production scheduling, biosecurity protocols, bird health monitoring, and supply chain logistics from farm to market.",
   },
   {
     Icon: FlaskIcon,
     title: "Feed Formulation Lab",
-    desc: "Observe and participate in custom feed design — ingredient sourcing, nutritional analysis, batch production, and quality control processes.",
+    desc: "Work directly alongside our nutrition team in developing and testing custom animal feed blends. Understand raw material selection, nutrient balancing, and quality control in a real production setting.",
   },
   {
     Icon: DocumentGraphIcon,
     title: "Business Advisory Support",
-    desc: "Assist our advisors in client engagements, help prepare business plans, and sit in on farmer consultations to see real agribusiness challenges in action.",
+    desc: "Shadow our advisors in live client consultations, assist with farm data collection and analysis, and contribute to the development of actual farmer business plans, not simulations.",
   },
   {
     Icon: TruckIcon,
-    title: "Supply Chain",
-    desc: "Follow produce from farm to buyer — coordinating logistics, managing order fulfilment, and learning how reliable commercial supply chains are built and maintained.",
+    title: "Supply Chain & Market Operations",
+    desc: "Follow how agricultural products move from farm gate to buyer. Learn logistics, pricing strategy, buyer relationship management, and the realities of agricultural market dynamics on the ground.",
   },
   {
     Icon: LeafIcon,
     title: "Sustainability Practices",
-    desc: "Understand how responsible input use, waste management, and ecosystem considerations are integrated into commercial farming at Providence CIG.",
+    desc: "Understand how Providence CIG integrates environmentally responsible practices into daily operations, from feed sourcing and waste management to long-term land health and water stewardship.",
   },
   {
     Icon: MentorshipIcon,
-    title: "Weekly Mentorship",
-    desc: "Every intern receives a named mentor from our team for structured weekly check-ins — goal-setting, feedback, and honest career conversations.",
+    title: "Weekly Mentorship Sessions",
+    desc: "Every intern is paired with a senior team member for structured, one-on-one weekly mentorship sessions. You leave with a written career development plan, not just a certificate.",
   },
 ];
 
@@ -164,52 +165,52 @@ const programmeDetails = [
   {
     label: "Eligibility",
     value:
-      "Undergraduate students (Year 2+), HND students, recent graduates (within 2 years)",
+      "Undergraduate students (Year 2 and above), HND students, recent graduates within 2 years of graduation",
   },
   {
     label: "Fields Welcome",
     value:
-      "Animal Science, Agribusiness, Nutrition, Veterinary Science, Food Science, Business Administration, Agricultural Economics, and related",
+      "Animal Science, Agribusiness, Nutrition, Veterinary Science, Food Science, Business Administration, Agricultural Economics, and related disciplines",
   },
-  { label: "Location", value: "On-site, Bambui, Cameroon" },
-  { label: "Stipend", value: "Available for qualifying interns" },
+  { label: "Location", value: "On-site at our production facility and offices" },
+  { label: "Stipend", value: "Available for qualifying interns, details provided upon selection" },
   {
     label: "Certification",
-    value: "Certificate of completion + signed professional reference letter",
+    value: "All interns receive a formal certificate of completion and a signed professional reference letter",
   },
-  { label: "Applications", value: "Rolling basis, no fixed deadline" },
+  { label: "Applications", value: "Reviewed on a rolling basis with no fixed deadline" },
 ];
 
 const testimonials = [
   {
     initials: "EA",
     name: "Esi Awouma",
-    institution: "University of Dschang",
-    department: "Animal Science",
+    institution: "University of Bamenda",
+    department: "BSc Animal Science, Poultry Operations",
     quote:
       "Providence CIG gave me my first real exposure to commercial poultry at scale. I came in thinking I understood layers from class. I left understanding what it actually takes to run a profitable production house. That gap is enormous — and this internship closes it.",
   },
   {
     initials: "SN",
     name: "Samuel Nkeng",
-    institution: "HTTTC Bambili",
-    department: "Agribusiness",
+    institution: "University of Dschang",
+    department: "BSc Nutrition, Feed Lab",
     quote:
       "The advisory rotation was the highlight for me. Sitting across from a real farmer trying to turn a struggling pig operation into a viable business — that taught me more about practical agribusiness than two years of lectures combined.",
   },
   {
     initials: "PT",
     name: "Priscilla Tankwa",
-    institution: "University of Buea",
-    department: "Food Science",
+    institution: "Bamenda University of Science and Technology",
+    department: "Agribusiness, Advisory",
     quote:
       "What I appreciated most was the mentorship. My mentor never made me feel like I was just here to observe. I was asked for opinions. I was challenged. I made mistakes and learned from them. That is the kind of environment that actually builds competence.",
   },
   {
     initials: "YM",
     name: "Yves Mbunwe",
-    institution: "FASA Dschang",
-    department: "Agricultural Economics",
+    institution: "Bamenda Polytechnic",
+    department: "HND Agriculture, General Operations",
     quote:
       "I came in wanting to understand feed formulation from a business angle. I left with a clear career direction, a strong reference letter, and a network inside an organisation I genuinely respect. Providence CIG treats interns like future colleagues.",
   },
@@ -220,13 +221,9 @@ const testimonials = [
 interface FormFields {
   fullName: string;
   email: string;
-  phone: string;
   institution: string;
-  fieldOfStudy: string;
-  currentLevel: string;
+  graduationYear: string;
   preferredDept: string;
-  startDate: string;
-  motivation: string;
 }
 
 interface FormErrors extends Partial<FormFields> {
@@ -334,13 +331,9 @@ export default function InternshipPage() {
   const [fields, setFields] = useState<FormFields>({
     fullName: "",
     email: "",
-    phone: "",
     institution: "",
-    fieldOfStudy: "",
-    currentLevel: "",
+    graduationYear: "",
     preferredDept: "",
-    startDate: "",
-    motivation: "",
   });
   const [cvFile, setCvFile] = useState<File | null>(null);
   const [cvError, setCvError] = useState<string>("");
@@ -350,10 +343,8 @@ export default function InternshipPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const charCount = fields.motivation.length;
-
   function handleChange(
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
     const { name, value } = e.target;
     setFields((prev) => ({ ...prev, [name]: value }));
@@ -396,13 +387,9 @@ export default function InternshipPage() {
     const requiredText: (keyof FormFields)[] = [
       "fullName",
       "email",
-      "phone",
       "institution",
-      "fieldOfStudy",
-      "currentLevel",
+      "graduationYear",
       "preferredDept",
-      "startDate",
-      "motivation",
     ];
 
     requiredText.forEach((key) => {
@@ -439,12 +426,17 @@ export default function InternshipPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#1c1c1e] to-[#8B0000]">
-        {/* Opacity layer */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-black/30"
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/internship-hero.webp"
+          fill
+          className="object-cover"
+          alt="Internship at Providence CIG"
+          priority
         />
+        {/* Dark overlay */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/60" />
         {/* Grid texture */}
         <div
           aria-hidden="true"
@@ -463,7 +455,7 @@ export default function InternshipPage() {
             animate="visible"
             className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-white/70 uppercase"
           >
-            Providence CIG &nbsp;|&nbsp; Internship Programme
+            INTERNSHIP PROGRAMME
           </motion.p>
 
           <motion.h1
@@ -483,10 +475,8 @@ export default function InternshipPage() {
             animate="visible"
             className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-200"
           >
-            Join a hands-on internship programme inside one of Cameroon&apos;s
-            most purposeful agribusinesses. Learn how commercial farming, custom
-            nutrition, and agricultural business advisory actually work — from
-            the people doing it every day.
+            Our internship programme gives students and young graduates real, hands-on exposure to
+            commercial agriculture.
           </motion.p>
 
           <motion.div custom={0.45} variants={fadeUp} initial="hidden" animate="visible" className="mt-10">
@@ -515,7 +505,7 @@ export default function InternshipPage() {
               variants={childFade}
               className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
             >
-              Why We Invest in Young People
+              WHY WE INVEST IN YOUNG PEOPLE
             </motion.p>
             <motion.h2
               variants={childFade}
@@ -528,23 +518,17 @@ export default function InternshipPage() {
               className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
             >
               <p>
-                Cameroon&apos;s agricultural sector does not have a talent shortage
-                — it has an experience gap. Students graduate with solid
-                theoretical foundations but limited exposure to how commercial
-                farming, feed formulation, and agribusiness advisory actually
-                operate at scale. We started the Providence CIG internship
-                programme because we believe the best way to change that is to
-                open our doors, share our methods, and invest directly in the
-                people who will be building this industry in the next decade.
+                Agriculture is one of Africa&apos;s most powerful economic engines and it desperately
+                needs a new generation of skilled, entrepreneurially minded practitioners. Not people
+                who only know farming from textbooks, but young professionals who can combine field
+                knowledge with business thinking, nutritional science with market understanding, and
+                ambition with work ethic.
               </p>
               <p>
-                This is not a passive observation internship. From week one,
-                participants are embedded in active operations — managing records,
-                assisting in formulation, sitting with clients, and contributing
-                to decisions that matter. We push interns because we respect
-                their potential. Every person who completes this programme leaves
-                with practical knowledge, professional references, and a
-                demonstrable record of real agricultural work.
+                Our internship programme was designed to produce exactly that. At Providence CIG,
+                interns are not errand runners or observers. They are junior team members, given real
+                responsibilities, real mentorship, and real exposure to how a modern agribusiness
+                operates from the inside.
               </p>
             </motion.div>
           </motion.div>
@@ -713,15 +697,14 @@ export default function InternshipPage() {
           >
             <motion.div variants={childFade} className="mb-12 text-center">
               <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase">
-                Join Us
+                JOIN US
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 Ready to Apply? Let&apos;s Talk.
               </h2>
               <p className="mx-auto mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
-                We accept applications on a rolling basis — there is no fixed
-                deadline. Fill in the form below and our team will be in touch
-                within five business days.
+                Applications are reviewed on a rolling basis. Fill in the form below and our team
+                will be in touch within five business days.
               </p>
             </motion.div>
 
@@ -743,12 +726,15 @@ export default function InternshipPage() {
                     <path d="M10 16 L14 20 L22 12" stroke="#16a34a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
+                <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase">
+                  APPLICATION RECEIVED
+                </p>
                 <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
-                  Application Received
+                  Thank you for applying to Providence CIG.
                 </h3>
                 <p className="font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
-                  Thank you for applying to Providence CIG. We have received your
-                  application and will be in touch within five business days.
+                  We have received your application and will be in touch within five business days.
+                  In the meantime, feel free to explore our services and learn more about what we do.
                 </p>
               </motion.div>
             ) : (
@@ -786,22 +772,8 @@ export default function InternshipPage() {
                   />
                 </FormInput>
 
-                {/* Phone */}
-                <FormInput label="Phone Number" id="phone" error={errors.phone} required>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    value={fields.phone}
-                    onChange={handleChange}
-                    placeholder="+237 6XX XXX XXX"
-                    className={errors.phone ? inputErrorClass : inputClass}
-                  />
-                </FormInput>
-
                 {/* Institution */}
-                <FormInput label="Institution or University" id="institution" error={errors.institution} required>
+                <FormInput label="School / University" id="institution" error={errors.institution} required>
                   <input
                     id="institution"
                     name="institution"
@@ -809,46 +781,24 @@ export default function InternshipPage() {
                     autoComplete="organization"
                     value={fields.institution}
                     onChange={handleChange}
-                    placeholder="e.g. University of Dschang"
+                    placeholder="e.g. University of Bamenda"
                     className={errors.institution ? inputErrorClass : inputClass}
                   />
                 </FormInput>
 
-                {/* Field of Study */}
-                <FormInput label="Field of Study" id="fieldOfStudy" error={errors.fieldOfStudy} required>
+                {/* Graduation Year */}
+                <FormInput label="Graduation Year" id="graduationYear" error={errors.graduationYear} required>
                   <input
-                    id="fieldOfStudy"
-                    name="fieldOfStudy"
-                    type="text"
-                    value={fields.fieldOfStudy}
+                    id="graduationYear"
+                    name="graduationYear"
+                    type="number"
+                    min="2020"
+                    max="2035"
+                    value={fields.graduationYear}
                     onChange={handleChange}
-                    placeholder="e.g. Animal Science"
-                    className={errors.fieldOfStudy ? inputErrorClass : inputClass}
+                    placeholder="e.g. 2026"
+                    className={errors.graduationYear ? inputErrorClass : inputClass}
                   />
-                </FormInput>
-
-                {/* Current Level */}
-                <FormInput label="Current Level" id="currentLevel" error={errors.currentLevel} required>
-                  <select
-                    id="currentLevel"
-                    name="currentLevel"
-                    value={fields.currentLevel}
-                    onChange={handleChange}
-                    className={cn(
-                      errors.currentLevel ? inputErrorClass : inputClass,
-                      "appearance-none cursor-pointer"
-                    )}
-                  >
-                    <option value="" disabled>
-                      Select your current level
-                    </option>
-                    <option value="undergraduate">Undergraduate</option>
-                    <option value="hnd">HND</option>
-                    <option value="postgraduate">Postgraduate</option>
-                    <option value="recent-graduate">
-                      Recent Graduate (within 2 years)
-                    </option>
-                  </select>
                 </FormInput>
 
                 {/* Preferred Department */}
@@ -870,54 +820,10 @@ export default function InternshipPage() {
                     <option value="feed-formulation">Feed Formulation Lab</option>
                     <option value="advisory">Agricultural Advisory</option>
                     <option value="supply-chain">
-                      Supply Chain and Market Operations
+                      Supply Chain &amp; Market Operations
                     </option>
                     <option value="open">Open to Placement</option>
                   </select>
-                </FormInput>
-
-                {/* Preferred Start Date */}
-                <FormInput label="Preferred Start Date" id="startDate" error={errors.startDate} required>
-                  <input
-                    id="startDate"
-                    name="startDate"
-                    type="date"
-                    value={fields.startDate}
-                    onChange={handleChange}
-                    className={errors.startDate ? inputErrorClass : inputClass}
-                  />
-                </FormInput>
-
-                {/* Motivation */}
-                <FormInput
-                  label="Why do you want to intern with Providence CIG?"
-                  id="motivation"
-                  error={errors.motivation}
-                  required
-                >
-                  <div className="relative">
-                    <textarea
-                      id="motivation"
-                      name="motivation"
-                      rows={5}
-                      maxLength={300}
-                      value={fields.motivation}
-                      onChange={handleChange}
-                      placeholder="Tell us about your interest in agribusiness and what you hope to gain from this experience... (max 300 characters)"
-                      className={cn(
-                        errors.motivation ? inputErrorClass : inputClass,
-                        "resize-none"
-                      )}
-                    />
-                    <div
-                      className={cn(
-                        "mt-1 text-right font-[family-name:var(--font-inter)] text-xs",
-                        charCount >= 280 ? "text-[#8B0000]" : "text-[#808080]"
-                      )}
-                    >
-                      {charCount} / 300
-                    </div>
-                  </div>
                 </FormInput>
 
                 {/* CV Upload */}
@@ -991,8 +897,7 @@ export default function InternshipPage() {
                           {cvFile.name}
                         </p>
                         <p className="font-[family-name:var(--font-inter)] text-xs text-[#808080]">
-                          {(cvFile.size / 1024).toFixed(0)} KB &middot; Click to
-                          change
+                          {(cvFile.size / 1024).toFixed(0)} KB &middot; Click to change
                         </p>
                       </div>
                     ) : (
@@ -1027,12 +932,12 @@ export default function InternshipPage() {
                       : "hover:bg-[#6e0000] active:scale-[0.99]"
                   )}
                 >
-                  {submitting ? "Submitting…" : "Submit Application"}
+                  {submitting ? "Submitting…" : "Submit My Application"}
                 </button>
 
                 <p className="text-center font-[family-name:var(--font-inter)] text-xs text-[#808080]">
-                  By submitting this form you agree for Providence CIG to retain
-                  your information for the purposes of this application.
+                  By submitting this form you agree for Providence CIG to retain your information
+                  for the purposes of this application.
                 </p>
               </motion.form>
             )}

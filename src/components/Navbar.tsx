@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -20,7 +21,7 @@ const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {
-    label: "Services",
+    label: "Products & Services",
     children: [
       { label: "Poultry Production", href: "/services/poultry" },
       { label: "Custom Animal Feed", href: "/services/feed" },
@@ -118,10 +119,10 @@ export default function Navbar() {
                 |
               </span>
               <a
-                href="mailto:info@providencecig.com"
+                href="mailto:cig.providence@gmail.com"
                 className="hover:text-white transition-colors"
               >
-                info@providencecig.com
+                cig.providence@gmail.com
               </a>
               <span aria-hidden="true" className="opacity-40">
                 |
@@ -142,9 +143,12 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link href="/" className="group flex items-center gap-3 flex-shrink-0">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#8B0000] text-xs font-bold text-white transition group-hover:bg-[#6e0000]">
-              PCIG
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="Providence CIG Logo"
+              width={56}
+              height={56}
+            />
             <span
               className="text-base font-bold leading-tight text-[#1a1a1a] transition-colors"
               style={{ fontFamily: "var(--font-playfair)" }}
@@ -268,9 +272,12 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center gap-3"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#8B0000] text-xs font-bold text-white">
-                    PCIG
-                  </div>
+                  <Image
+                    src="/images/logo.png"
+                    alt="Providence CIG Logo"
+                    width={56}
+                    height={56}
+                  />
                   <span
                     className="text-sm font-bold text-[#1a1a1a]"
                     style={{ fontFamily: "var(--font-playfair)" }}
@@ -362,7 +369,7 @@ export default function Navbar() {
                 </Link>
                 <address className="mt-4 space-y-1 not-italic text-xs text-[#808080]">
                   <p>+237 XXX XXX XXX</p>
-                  <p>info@providencecig.com</p>
+                  <p>cig.providence@gmail.com</p>
                   <p>Bambui, Cameroon</p>
                 </address>
               </div>

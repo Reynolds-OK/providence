@@ -10,25 +10,25 @@ const steps = [
     number: "01",
     title: "Reach Out",
     description:
-      "Contact us by phone, WhatsApp, or through our website. Tell us about your farm, your animals, or what you need — there is no complicated process to get started.",
+      "Tell us what you need. Whether you are a retailer, a farmer, or an aspiring agripreneur, we are ready to listen.",
   },
   {
     number: "02",
     title: "Consult",
     description:
-      "We sit down with you — in person or remotely — to understand your situation: your flock size, feed challenges, budget, and goals. This is how we build the right plan.",
+      "We sit with you, in person or remotely, to understand your operation, your goals, and the specific gaps we need to address together.",
   },
   {
     number: "03",
     title: "Deliver",
     description:
-      "Whether it is poultry birds, a batch of custom feed, or a field advisory visit, we execute with care and follow through. Quality and reliability are non-negotiable.",
+      "From fresh poultry supply to a custom feed batch to a full business roadmap, we execute with precision and care.",
   },
   {
     number: "04",
     title: "Grow Together",
     description:
-      "We stay in your corner. Through check-ins, new formulations, and ongoing support, we grow alongside you — because your success is the foundation of everything we do.",
+      "We do not disappear after the first delivery or session. We follow up, iterate, and grow alongside you.",
   },
 ];
 

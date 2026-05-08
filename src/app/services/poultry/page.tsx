@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { CheckCircle } from "lucide-react";
@@ -28,127 +29,6 @@ const childFade = {
   hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
-
-/* ─── SVG Icons ──────────────────────────────────────────────────────────── */
-
-function EggIcon() {
-  return (
-    <svg
-      width="80"
-      height="80"
-      viewBox="0 0 80 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <ellipse
-        cx="40"
-        cy="44"
-        rx="22"
-        ry="28"
-        stroke="#8B0000"
-        strokeWidth="2.5"
-      />
-      <ellipse
-        cx="40"
-        cy="44"
-        rx="22"
-        ry="28"
-        fill="#8B0000"
-        fillOpacity="0.06"
-      />
-      <ellipse
-        cx="33"
-        cy="34"
-        rx="5"
-        ry="7"
-        fill="#8B0000"
-        fillOpacity="0.12"
-        transform="rotate(-20 33 34)"
-      />
-    </svg>
-  );
-}
-
-function ChickenIcon() {
-  return (
-    <svg
-      width="80"
-      height="80"
-      viewBox="0 0 80 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Body */}
-      <ellipse
-        cx="40"
-        cy="46"
-        rx="20"
-        ry="16"
-        stroke="#8B0000"
-        strokeWidth="2.5"
-        fill="#8B0000"
-        fillOpacity="0.06"
-      />
-      {/* Head */}
-      <circle
-        cx="54"
-        cy="30"
-        r="10"
-        stroke="#8B0000"
-        strokeWidth="2.5"
-        fill="#8B0000"
-        fillOpacity="0.06"
-      />
-      {/* Beak */}
-      <path
-        d="M64 29 L70 31 L64 34"
-        stroke="#8B0000"
-        strokeWidth="2"
-        strokeLinejoin="round"
-        fill="#8B0000"
-        fillOpacity="0.15"
-      />
-      {/* Comb */}
-      <path
-        d="M50 22 Q52 17 54 21 Q56 16 58 20 Q60 15 61 19"
-        stroke="#8B0000"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      {/* Wattle */}
-      <path
-        d="M56 38 Q54 44 58 44"
-        stroke="#8B0000"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-      {/* Wing */}
-      <path
-        d="M28 44 Q22 38 26 32 Q32 36 34 44"
-        stroke="#8B0000"
-        strokeWidth="2"
-        strokeLinejoin="round"
-        fill="#8B0000"
-        fillOpacity="0.1"
-      />
-      {/* Legs */}
-      <path
-        d="M36 62 L34 68 M34 68 L30 70 M34 68 L36 72"
-        stroke="#8B0000"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M44 62 L46 68 M46 68 L42 70 M46 68 L48 72"
-        stroke="#8B0000"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 
 /* ─── Section wrapper ────────────────────────────────────────────────────── */
 
@@ -179,16 +59,16 @@ const eggPoints = [
   "Available in standard and large tray quantities",
   "Suitable for retail market stalls, supermarkets, restaurants, and wholesale distributors",
   "Consistent weekly production schedule for reliable restocking",
-  "Freshness guaranteed, traceable from production house to delivery point",
+  "Fresh at every point, from production to delivery.",
   "Bulk order pricing available for high-volume buyers",
 ];
 
 const broilerPoints = [
-  "Available live-weight or dressed, based on buyer preference",
-  "Uniform batch sizes suitable for butcheries, restaurants, and retail markets",
-  "Supplied on a scheduled cycle to match your restocking cadence",
-  "Raised under controlled biosecurity conditions for food-safe supply",
-  "Volume pricing available for weekly and monthly purchase agreements",
+  "Market-weight birds available on a weekly cycle",
+  "Live bird or dressed supply options available",
+  "Bulk orders accommodated for wholesalers and large-volume retail buyers",
+  "Consistent breed standard and quality",
+  "Flexible supply agreements for repeat buyers",
 ];
 
 const processSteps = [
@@ -210,7 +90,17 @@ export default function PoultryPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#1c1c1e] to-[#3d1010]">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/eggs-tray.png"
+          fill
+          className="object-cover"
+          alt="Eggs tray"
+          priority
+        />
+        {/* Dark overlay */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/60" />
         {/* Radial glow */}
         <div
           aria-hidden="true"
@@ -238,7 +128,7 @@ export default function PoultryPage() {
             animate="visible"
             className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
           >
-            Providence CIG &nbsp;|&nbsp; Poultry Services
+            POULTRY PRODUCTION
           </motion.p>
 
           <motion.h1
@@ -248,7 +138,7 @@ export default function PoultryPage() {
             animate="visible"
             className="max-w-4xl font-[family-name:var(--font-playfair)] text-5xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl"
           >
-            Quality Poultry. Reliable Supply. Every Time.
+            Quality and Reliable Poultry Supply
           </motion.h1>
 
           <motion.p
@@ -258,10 +148,8 @@ export default function PoultryPage() {
             animate="visible"
             className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-300"
           >
-            Whether you need fresh eggs for your retail operation or broilers for
-            your food-service business, Providence CIG delivers consistent,
-            traceable poultry products on a schedule you can build your business
-            around.
+            We run a commercial poultry facility supplying fresh eggs and broilers to retailers,
+            market traders, and wholesalers. Our standards are strict, and our supply is reliable.
           </motion.p>
         </div>
       </section>
@@ -287,10 +175,10 @@ export default function PoultryPage() {
                 Fresh Eggs at Commercial Scale
               </h2>
               <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
-                Our layer production operates on a disciplined cycle, ensuring a
-                consistent flow of fresh eggs to meet commercial demand. From
-                small market stall operators to large supermarket chains, we
-                tailor supply agreements to fit your volume and schedule.
+                Our laying hens are raised in clean, well-managed environments and fed nutritionally
+                balanced feed, which means the eggs we produce are consistently fresh, nutrient-rich,
+                and market-ready. We supply in bulk to wholesalers and in flexible quantities to retail
+                outlets, with delivery arrangements that keep your shelves stocked.
               </p>
 
               <ul className="mt-8 space-y-4">
@@ -311,8 +199,8 @@ export default function PoultryPage() {
 
             {/* Visual */}
             <motion.div variants={childFade}>
-              <div className="flex h-80 items-center justify-center rounded-2xl border-2 border-[#8B0000]/20 bg-[#faf9f7]">
-                <EggIcon />
+              <div className="relative rounded-2xl overflow-hidden h-80">
+                <Image src="/images/eggs-tray.png" fill className="object-cover" alt="Fresh egg trays" />
               </div>
             </motion.div>
           </motion.div>
@@ -333,8 +221,8 @@ export default function PoultryPage() {
           >
             {/* Visual — left on desktop */}
             <motion.div variants={childFade} className="order-2 lg:order-1">
-              <div className="flex h-80 items-center justify-center rounded-2xl border-2 border-[#8B0000]/20 bg-white">
-                <ChickenIcon />
+              <div className="relative rounded-2xl overflow-hidden h-80">
+                <Image src="/images/broilers-house.png" fill className="object-cover" alt="Broiler chicken house" />
               </div>
             </motion.div>
 
@@ -347,10 +235,11 @@ export default function PoultryPage() {
                 Broilers Ready for the Market
               </h2>
               <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
-                Our broilers are raised under controlled conditions with precise
-                nutrition schedules, resulting in consistent live weights and
-                premium meat quality. We work with buyers who need dependable
-                supply — not just a one-off purchase, but a relationship.
+                Our broilers are raised to optimal market weight under controlled, hygienic conditions.
+                We supply live birds or can arrange dressing on request, depending on your market
+                requirements. Whether you are a market trader, butcher, hotel supplier, or wholesale
+                distributor, we can match your volume requirements and agree on a delivery schedule
+                that works for your business.
               </p>
 
               <ul className="mt-8 space-y-4">
@@ -393,9 +282,8 @@ export default function PoultryPage() {
             variants={childFade}
             className="mx-auto mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-white/80"
           >
-            We work with retailers, food businesses, and wholesalers who value
-            quality and consistency. Reach out and let us discuss what a
-            reliable poultry supply arrangement looks like for your operation.
+            Whether you need a one-time order or a long-term supply arrangement, we are ready to
+            talk. Fill in the form below or reach us directly on WhatsApp.
           </motion.p>
           <motion.div variants={childFade} className="mt-10">
             <Link

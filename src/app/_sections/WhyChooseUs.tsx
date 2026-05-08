@@ -205,32 +205,32 @@ const differentiators = [
     icon: <RepeatIcon />,
     title: "Consistent Supply",
     description:
-      "We maintain reliable production cycles so retailers and households can count on steady, high-quality poultry and feed — week after week, without interruption.",
+      "We maintain production standards that retailers and wholesalers can depend on, season after season, without interruption.",
   },
   {
     icon: <SlidersIcon />,
     title: "Custom-First Approach",
     description:
-      "Every farmer has different animals, goals, and constraints. We listen first, then formulate feed and advisory plans that fit your specific operation — not a one-size template.",
+      "No two farms are the same, so we don't treat them that way. Our feed formulations and advisory programmes are built around your specific situation and what your farm actually needs.",
   },
   {
     icon: <BookSproutIcon />,
     title: "Grounded Expertise",
     description:
-      "Our knowledge is earned in the field, tested in real conditions across the Northwest Region — not borrowed from a textbook but validated on Cameroonian farms.",
+      "Our team combines hands-on agricultural experience with real business acumen. We understand both the field and the market.",
   },
   {
     icon: <CommunityIcon />,
     title: "Community at the Core",
     description:
-      "We are a Common Initiative Group — built to serve our community, uplift local farmers, and strengthen the regional food economy through shared knowledge and fair business.",
+      "We are invested in the long-term prosperity of the communities around us, not just the next transaction. Our logo says it best: we grow together.",
   },
 ];
 
 const stats = [
   { end: 10000, suffix: "+", label: "Eggs Produced Weekly", duration: 2.5 },
-  { end: 30, suffix: "+", label: "Custom Feed Formulations Delivered", duration: 2 },
-  { end: 100, suffix: "+", label: "Farmers Advised and Supported", duration: 2 },
+  { end: 30, suffix: "+", label: "Custom Feed Formulations", duration: 2 },
+  { end: 100, suffix: "+", label: "Farmers Advised & Supported", duration: 2 },
   { end: 2, suffix: "", label: "International Funding Partners", duration: 1.5 },
 ];
 
@@ -318,10 +318,7 @@ export default function WhyChooseUs() {
             Built on the Ground. Driven by Results.
           </h2>
           <p className="mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-gray-300">
-            Providence CIG was forged in the practical realities of smallholder
-            and commercial farming in Cameroon. Everything we do — from feed
-            formulation to farm visits — is shaped by real problems faced by
-            real farmers, and tested against real results.
+            We&apos;re not just another agricultural supplier. We produce eggs, formulate feed, and work closely with farmers who are serious about growing. Every product we put out and every advisory session we hold is tied to one goal: making agriculture more productive and more profitable. We understand the challenges that come with farming here, and we&apos;re built to help you work through them.
           </p>
         </div>
 

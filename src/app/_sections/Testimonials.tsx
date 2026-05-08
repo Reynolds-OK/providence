@@ -11,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 const testimonials = [
   {
     quote:
-      "Providence CIG has been my most dependable egg supplier for over two years. The eggs are always fresh, properly sized, and delivered without fuss. My customers notice the difference — and so does my bottom line.",
+      "Their eggs arrive fresh, on time, every single time. As a market retailer, consistency is everything and these people deliver without fail.",
     name: "Ama Ngwa",
     role: "Market Retailer",
     location: "Bamenda",
@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     quote:
-      "Before working with Providence, I was losing birds every dry season because my feed was inconsistent. They formulated a custom ration for my broilers and the improvement was immediate — better weight gain, fewer losses, lower costs.",
+      "I came to them with no idea how to properly feed my goat herd. They put together a custom blend and within a few weeks, the difference in my animals was visible. Remarkable service.",
     name: "Emmanuel Fon",
     role: "Livestock Farmer",
     location: "Bambui",
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     quote:
-      "The advisory team at Providence CIG helped me restructure my poultry enterprise from scratch. They did not just give me advice — they came to my farm, reviewed my setup, and walked me through every change. Real support, not just talk.",
+      "The advisory team helped me write my first real business plan for my poultry farm. I secured financing I had been trying to access for over two years. These people changed my trajectory.",
     name: "Carine Mbah",
     role: "Poultry Entrepreneur",
     location: "Kumbo",
@@ -161,7 +161,7 @@ export default function Testimonials() {
             What Our Clients Say
           </p>
           <h2 className="mx-auto max-w-2xl font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-5xl">
-            Trusted by Retailers and Farmers Across the Region.
+            Trusted by Retailers and Farmers Across.
           </h2>
         </div>
 

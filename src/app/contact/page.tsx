@@ -181,8 +181,7 @@ function ContactForm() {
           Message Received!
         </h3>
         <p className="max-w-sm font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
-          Thank you! We&apos;ll be in touch shortly. A member of our team typically
-          responds within 24&ndash;48 business hours.
+          Thank you — We&apos;ve received your message. Our team will get back to you shortly.
         </p>
         <button
           onClick={() => {
@@ -306,7 +305,7 @@ export default function ContactPage() {
             animate="visible"
             className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase"
           >
-            Get in Touch
+            CONTACT
           </motion.p>
           <motion.h1
             custom={0.12}
@@ -324,9 +323,9 @@ export default function ContactPage() {
             animate="visible"
             className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
           >
-            Whether you&apos;re a farmer looking for better inputs, a retailer
-            seeking reliable supply, or a partner ready to collaborate — we want
-            to hear from you.
+            Whether you are a retailer seeking a reliable poultry supplier, a farmer who needs
+            custom feed, someone ready for advisory support, or a student interested in our
+            internship programme, we want to hear from you.
           </motion.p>
         </div>
       </section>
@@ -347,17 +346,18 @@ export default function ContactPage() {
             <motion.div variants={childFade} className="flex flex-col gap-10">
               {/* Contact details */}
               <div className="space-y-6">
-                <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
-                  Contact Details
-                </h2>
+                <div>
+                  <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
+                    Reach Us Directly
+                  </h2>
+                  <p className="mt-1 font-[family-name:var(--font-inter)] text-sm text-[#808080]">
+                    Bambui, North West Region.
+                  </p>
+                </div>
 
                 <ContactItem icon={MapPin} label="Address">
                   <p>
-                    Providence Common Initiative Group
-                    <br />
-                    Bambui, North-West Region
-                    <br />
-                    Cameroon
+                    Bambui, North West Region, Cameroon
                   </p>
                 </ContactItem>
 
@@ -372,16 +372,15 @@ export default function ContactPage() {
 
                 <ContactItem icon={Mail} label="Email">
                   <a
-                    href="mailto:info@providencecig.com"
+                    href="mailto:cig.providence@gmail.com"
                     className="transition-colors hover:text-[#8B0000]"
                   >
-                    info@providencecig.com
+                    cig.providence@gmail.com
                   </a>
                 </ContactItem>
 
                 <ContactItem icon={MessageCircle} label="WhatsApp">
                   <div className="flex items-center gap-3">
-                    <span>Available for quick enquiries</span>
                     <a
                       href="https://wa.me/237XXXXXXXXX"
                       target="_blank"

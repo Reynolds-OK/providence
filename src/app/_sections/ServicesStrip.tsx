@@ -210,21 +210,21 @@ const cards: ServiceCard[] = [
     icon: <PoultryIcon />,
     title: "Poultry Production",
     description:
-      "We raise healthy broilers and layers under best-practice management, supplying eggs and birds consistently to households, retailers, and institutions across the Northwest Region.",
+      "Fresh eggs and quality broilers, supplied reliably to retailers and wholesalers across the region.",
     href: "/services/poultry",
   },
   {
     icon: <FeedIcon />,
     title: "Custom Animal Feed",
     description:
-      "We formulate nutritionally optimized feed tailored to species, growth stage, and budget — helping farmers cut costs and improve flock performance without compromise.",
+      "Specifically formulated feed blends, engineered around your specific livestock and production goals.",
     href: "/services/feed",
   },
   {
     icon: <AdvisoryIcon />,
     title: "Agricultural Advisory",
     description:
-      "Our team provides hands-on guidance — from farm setup and biosecurity to record-keeping and market access — for farmers who want to run sustainable, profitable operations.",
+      "Business guidance for farmers who are ready to move from survival to scale.",
     href: "/services/advisory",
   },
 ];

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
@@ -169,22 +170,22 @@ const howItWorksSteps = [
   {
     num: "1",
     title: "Consultation",
-    desc: "We begin with a detailed conversation about your herd, flock, or pond — species, age, stage, health status, and production goals.",
+    desc: "You tell us about your animals: species, breed, age range, current weight, target weight or production metrics, any known health conditions, and your budget. The more detail you share, the better the formulation.",
   },
   {
     num: "2",
     title: "Formulation",
-    desc: "Our nutrition team designs a feed profile calibrated to your livestock's specific requirements, referencing current research and field-tested ratios.",
+    desc: "Our nutrition team develops a precise feed formula tailored to your specifications, using quality raw materials and established nutritional science. You review and approve it before we produce anything.",
   },
   {
     num: "3",
     title: "Production",
-    desc: "We manufacture your custom batch using quality-controlled inputs, with precise measurement at every stage of the mixing process.",
+    desc: "We mix and prepare your batch to the exact formulation, with quality checks at each stage of production.",
   },
   {
     num: "4",
-    title: "Delivery and Follow-up",
-    desc: "Your feed is delivered on your schedule. We follow up to assess animal response and refine the formula as your operation evolves.",
+    title: "Delivery & Follow-up",
+    desc: "We deliver to your farm and follow up to monitor results. If adjustments are needed, we refine the formulation at no additional charge.",
   },
 ];
 
@@ -192,32 +193,32 @@ const livestock = [
   {
     Icon: PoultryIcon,
     name: "Poultry",
-    desc: "Optimised layer and broiler rations for maximum egg production and weight gain.",
+    desc: "Layers, broilers, indigenous and free-range breeds",
   },
   {
     Icon: GoatIcon,
     name: "Goats & Sheep",
-    desc: "Balanced small ruminant feeds for growth, reproduction, and fleece quality.",
+    desc: "Tailored nutrition for healthy growth and milk yield",
   },
   {
     Icon: PigIcon,
     name: "Pigs",
-    desc: "Stage-specific swine nutrition from creep feeding through finishing.",
+    desc: "Stage-specific formulations from piglet to finisher",
   },
   {
     Icon: CattleIcon,
     name: "Cattle & Dairy Cows",
-    desc: "High-energy rations and mineral supplements to support milk yield and beef production.",
+    desc: "Optimized for weight gain or milk production",
   },
   {
     Icon: RabbitIcon,
     name: "Rabbits & Small Livestock",
-    desc: "Precisely portioned pellets for rabbits and other small-scale species.",
+    desc: "Specialty blends for small-scale operations",
   },
   {
     Icon: FishIcon,
     name: "Aquaculture",
-    desc: "Floating and sinking pellets formulated for tilapia, catfish, and other farmed species.",
+    desc: "Custom formulations available upon request",
   },
 ];
 
@@ -234,7 +235,17 @@ export default function FeedPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#1c1c1e] to-[#3d1010]">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/feed-grains.png"
+          fill
+          className="object-cover"
+          alt="Animal feed grains"
+          priority
+        />
+        {/* Dark overlay */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/65" />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -260,7 +271,7 @@ export default function FeedPage() {
             animate="visible"
             className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
           >
-            Providence CIG &nbsp;|&nbsp; Custom Animal Feed
+            CUSTOM ANIMAL FEED
           </motion.p>
 
           <motion.h1
@@ -270,9 +281,7 @@ export default function FeedPage() {
             animate="visible"
             className="max-w-4xl font-[family-name:var(--font-playfair)] text-5xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl"
           >
-            Feed That Fits Your Flock.
-            <br />
-            Not Someone Else&apos;s.
+            Feed That Fits Your Flock
           </motion.h1>
 
           <motion.p
@@ -282,9 +291,8 @@ export default function FeedPage() {
             animate="visible"
             className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-300"
           >
-            Generic feed is designed for average conditions. Your farm is not
-            average. Providence CIG formulates custom animal feed built around
-            your specific livestock, your environment, and your production goals.
+            Generic animal feed was designed for an average animal. We formulate feed blends
+            specifically for your livestock, your production goals, and your budget.
           </motion.p>
         </div>
       </section>
@@ -317,23 +325,18 @@ export default function FeedPage() {
               className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
             >
               <p>
-                Commercial animal feed is manufactured at mass scale to serve the
-                broadest possible market. That means formulations built around
-                averages — average breed, average climate, average production
-                targets. But when your flock has a specific genetic profile, when
-                your feed ingredients vary by season, or when your herd is
-                recovering from a health challenge, an average formula is not
-                enough. You end up paying for nutrients your animals cannot use
-                while missing the ones they actually need.
+                Most commercial animal feed is formulated to serve the broadest possible market,
+                which means it rarely serves any single farmer particularly well. When your feed is
+                not calibrated to your specific animals, their stage of life, and your production
+                targets, you end up paying for nutrients your livestock do not need and missing the
+                ones they do. The result is slower growth, lower yields, and higher long-term costs
+                than you should be carrying.
               </p>
               <p>
-                We have seen farms where layers were producing well below their
-                genetic potential — not because of disease or poor management, but
-                because their calcium-to-phosphorus ratio was marginally off, and
-                no one had looked closely enough to notice. Custom formulation
-                closes that gap. It means your feed budget is working as hard as
-                your animals are, and that the nutrition your livestock receive is
-                calibrated to exactly where they are in their production cycle.
+                Custom feed changes that. A formulation designed precisely for your herd or flock
+                can dramatically improve feed conversion ratios, weight gain rates, egg production
+                volumes, and overall livestock health, often at a comparable or lower total cost than
+                the generic alternatives you are currently buying.
               </p>
             </motion.div>
           </motion.div>
@@ -356,7 +359,7 @@ export default function FeedPage() {
                 How It Works
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
-                Four Steps to Your Custom Feed.
+                From Consultation to Delivery
               </h2>
             </motion.div>
 
@@ -409,7 +412,7 @@ export default function FeedPage() {
                 Our Expertise
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
-                Livestock We Formulate For
+                Built for Every Animal on Your Farm
               </h2>
             </motion.div>
 
@@ -455,9 +458,8 @@ export default function FeedPage() {
             variants={childFade}
             className="mx-auto mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-white/80"
           >
-            Send us your livestock details and current feed challenges. Our
-            nutrition team will review your situation and propose a formulation
-            tailored to your operation.
+            Reach out with details about your livestock and your production goals and we will take it
+            from there. No obligation, just a conversation.
           </motion.p>
           <motion.div variants={childFade} className="mt-10">
             <Link

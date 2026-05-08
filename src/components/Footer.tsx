@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Globe, Share2, Link2, MessageCircle } from "lucide-react";
 
@@ -14,7 +15,6 @@ const quickLinks = [
   { label: "About Us", href: "/about" },
   { label: "Our Story", href: "/about#story" },
   { label: "Partners", href: "/about#partners" },
-  { label: "Internship Programme", href: "/internship" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -105,11 +105,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 — Brand */}
           <div>
-            {/* Logo placeholder */}
             <Link href="/" className="inline-flex items-center gap-3 group">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#8B0000] text-sm font-bold text-white transition group-hover:bg-[#6e0000]">
-                PCIG
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="Providence CIG Logo"
+                width={80}
+                height={80}
+              />
               <span
                 className="text-base font-bold leading-tight text-white"
                 style={{ fontFamily: "var(--font-playfair)" }}
@@ -121,7 +123,9 @@ export default function Footer() {
               className="mt-4 text-sm font-semibold italic leading-relaxed text-[#8C8578]"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
-              Cultivating Growth. Nourishing Lives. Uniting Communities.
+              Growing farms.<br />
+              Feeding families.<br />
+              Building communities.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-gray-400">
               Providence Common Initiative Group is an agribusiness based in
@@ -188,10 +192,10 @@ export default function Footer() {
               <p>
                 <span className="text-gray-300">Email:</span>{" "}
                 <a
-                  href="mailto:info@providencecig.com"
+                  href="mailto:cig.providence@gmail.com"
                   className="hover:text-white transition-colors"
                 >
-                  info@providencecig.com
+                  cig.providence@gmail.com
                 </a>
               </p>
               <p>

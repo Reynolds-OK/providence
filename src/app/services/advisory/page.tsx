@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
@@ -141,32 +142,32 @@ const advisoryAreas = [
   {
     Icon: BusinessPlanningIcon,
     title: "Business Planning",
-    desc: "We help you translate your farming activities into a structured business plan — one that clarifies your revenue model, defines your target market, and creates a roadmap for growth that lenders, investors, and partners can read and believe in.",
+    desc: "We help you build a proper, bankable business plan, realistic, structured, and tailored to your farm's current stage and future ambitions. One that you can take to a bank, an investor, or a grant programme with genuine confidence.",
   },
   {
     Icon: FinancialManagementIcon,
     title: "Financial Management",
-    desc: "From setting up basic farm accounts to analysing margins, cash flow, and profitability by enterprise, we build your financial literacy alongside your financial systems so you always know where your business stands.",
+    desc: "Understand your true cost of production, your profit margins, your seasonal cash flow cycles, and how to make sound financial decisions across your farming year, not just during harvest.",
   },
   {
     Icon: MarketAccessIcon,
     title: "Market Access",
-    desc: "We help you identify and secure buyers, negotiate offtake agreements, and position your produce within local, regional, and institutional procurement channels where demand is stable and pricing is fair.",
+    desc: "Identify the right buyers for your produce, negotiate better prices, and build supply relationships that give your farm stable, predictable revenue instead of one-off sales with no security.",
   },
   {
     Icon: OperationalEfficiencyIcon,
     title: "Operational Efficiency",
-    desc: "Labour costs, input waste, and process bottlenecks erode margins silently. We audit your current operations and identify specific, practical improvements that free up resources without sacrificing output quality.",
+    desc: "Identify where you are losing time, money, or yield in your current operations and implement practical improvements that get more output from the same inputs you are already working with.",
   },
   {
     Icon: GrantReadinessIcon,
-    title: "Grant and Loan Readiness",
-    desc: "Agricultural financing opportunities exist, but they go to prepared applicants. We guide you through documentation, compliance requirements, and application strategy so you compete from a position of strength.",
+    title: "Grant & Loan Readiness",
+    desc: "Prepare your business to access agricultural financing, government grants, development fund support, and institutional programmes that you may currently be invisible to, simply because your paperwork is not in order.",
   },
   {
     Icon: ScalingStrategyIcon,
     title: "Scaling Strategy",
-    desc: "Growing from a small operation to a commercial enterprise is a different challenge than starting one. We advise on when to scale, how to manage the transition, and what systems need to be in place before you grow.",
+    desc: "Ready to expand? We help you plan a growth strategy that does not break what you have already built, covering land, labour, capital, supply chain, and market capacity in a way that is realistic and sequenced properly.",
   },
 ];
 
@@ -183,7 +184,17 @@ export default function AdvisoryPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden bg-gradient-to-br from-[#1c1c1e] to-[#3d1010]">
+      <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/images/advisory-meeting.webp"
+          fill
+          className="object-cover"
+          alt="Advisory consultation"
+          priority
+        />
+        {/* Dark overlay */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/65" />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -209,7 +220,7 @@ export default function AdvisoryPage() {
             animate="visible"
             className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
           >
-            Providence CIG &nbsp;|&nbsp; Agricultural Advisory
+            AGRICULTURAL ADVISORY
           </motion.p>
 
           <motion.h1
@@ -219,9 +230,7 @@ export default function AdvisoryPage() {
             animate="visible"
             className="max-w-4xl font-[family-name:var(--font-playfair)] text-5xl font-bold leading-[1.08] tracking-tight text-white md:text-6xl"
           >
-            You Know Farming.
-            <br />
-            We Help You Build a Business Around It.
+            You Know Farming. We Help You Build a Business Around It.
           </motion.h1>
 
           <motion.p
@@ -231,9 +240,9 @@ export default function AdvisoryPage() {
             animate="visible"
             className="mx-auto mt-6 max-w-3xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-300"
           >
-            Technical farming skill is only part of the equation. Providence
-            CIG&apos;s advisory service helps you translate what you do on the farm
-            into a structured, profitable, and scalable agricultural business.
+            There is a real difference between being a farmer and running a farming business. We work
+            with farmers who are ready to cross that line, to move from informal to structured, from
+            subsistence to scale, from getting by to genuinely thriving.
           </motion.p>
         </div>
       </section>
@@ -254,7 +263,7 @@ export default function AdvisoryPage() {
                 Our Focus Areas
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
-                What We Advise On
+                Six Areas of Practical Expertise
               </h2>
             </motion.div>
 
@@ -309,21 +318,16 @@ export default function AdvisoryPage() {
               className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
             >
               <p>
-                Our advisory service is designed for farmers and agricultural
-                entrepreneurs who are past the starting point but feel stuck at a
-                ceiling. You have been farming for a few years. You have a
-                product, buyers, and some income — but growth feels unclear, your
-                records are inconsistent, or you know there is more potential in
-                your operation than you are currently capturing. That is exactly
-                the stage where structured advisory makes the biggest difference.
+                Our advisory service is designed for smallholder and medium-scale farmers in
+                Cameroon who are serious about growth, not just farming. If you are already working
+                the land, whether in poultry, livestock, mixed farming, or crop production, and you
+                want to build something lasting and profitable, this is for you.
               </p>
               <p>
-                We also work with farmers who are preparing for a significant
-                transition: applying for their first agricultural loan, entering a
-                new market, hiring their first employees, or building a supply
-                relationship with an institution. These moments require more than
-                farming knowledge — they require business acumen, and that is what
-                we bring to the table alongside you.
+                You do not need to have everything figured out. You do not need a business
+                background or a degree in management. You just need to show up ready to work, ready
+                to be honest about where you are, and willing to take your farm somewhere it has
+                never been before.
               </p>
             </motion.div>
           </motion.div>
@@ -353,27 +357,19 @@ export default function AdvisoryPage() {
               </h2>
               <div className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
                 <p>
-                  When a smallholder farmer from the outskirts of Bamenda
-                  approached Providence CIG, she was running a 200-bird broiler
-                  operation out of a rented shed, selling live birds to local
-                  buyers at whatever price they offered. Her income was irregular,
-                  her records were kept in a notebook she sometimes misplaced, and
-                  she had no clear picture of whether she was actually profitable.
-                  She knew how to raise birds. She did not yet know how to run a
-                  business around them.
+                  One of our clients came to us running a small backyard broiler operation with no
+                  financial records, no formal market relationships, no business plan, and no clear
+                  idea of how to access the funding they knew they needed. Over six months of
+                  structured advisory sessions, we helped them formalize their operation, build their
+                  first set of financial records, prepare a loan application, and secure a supply
+                  contract with a local distributor.
                 </p>
                 <p>
-                  Over six months of structured advisory engagement, we helped her
-                  set up a basic double-entry records system, calculate her true
-                  cost per bird, and identify that her feed-conversion ratio was
-                  12% above industry standard — a problem we solved with a custom
-                  feed formulation from our nutrition team. We then helped her
-                  negotiate a fixed-price offtake agreement with a restaurant
-                  group in Bamenda, locking in demand three months in advance.
-                  Within a year, she had expanded to 800 birds per cycle, hired
-                  two full-time farm hands, and submitted a successful loan
-                  application to a regional agricultural bank. The birds were
-                  always there. The business framework needed to catch up.
+                  Today, they run a structured broiler enterprise with over 1,200 birds per cycle, a
+                  reliable off-take arrangement, and a business they are proud to call their own.
+                </p>
+                <p className="italic">
+                  This is what advisory, done right, looks like.
                 </p>
               </div>
             </motion.div>
@@ -402,10 +398,9 @@ export default function AdvisoryPage() {
             variants={childFade}
             className="mx-auto mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-white/80"
           >
-            Book a consultation with our advisory team. We will review your
-            current situation and outline a clear path forward — practical,
-            honest, and grounded in what is actually achievable for your
-            operation.
+            Book a consultation with our advisory team. The first session is just a conversation,
+            no pressure, no commitment. Two people talking honestly about your farm and what it
+            could become.
           </motion.p>
           <motion.div variants={childFade} className="mt-10">
             <Link
