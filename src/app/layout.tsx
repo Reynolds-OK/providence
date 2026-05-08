@@ -32,6 +32,11 @@ export const metadata: Metadata = {
     "agricultural advisory",
     "farming Cameroon",
   ],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "Providence Common Initiative Group",
     description: "Cultivating Growth. Nourishing Lives. Uniting Communities.",
