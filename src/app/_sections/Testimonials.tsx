@@ -89,7 +89,7 @@ function TestimonialCard({
           <p className="font-[family-name:var(--font-inter)] text-sm font-semibold text-[#1c1c1e]">
             {name}
           </p>
-          <p className="font-[family-name:var(--font-inter)] text-xs text-[#808080]">
+          <p className="font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
             {role} &mdash; {location}
           </p>
         </div>
@@ -153,7 +153,7 @@ export default function Testimonials() {
   });
 
   return (
-    <section className="bg-[#f5f3f0] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-12 text-center">

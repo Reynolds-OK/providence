@@ -259,7 +259,7 @@ export default function AdvisoryPage() {
             animate={advisoryInView ? "visible" : "hidden"}
           >
             <motion.div variants={childFade} className="mb-14">
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Our Focus Areas
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -272,7 +272,7 @@ export default function AdvisoryPage() {
                 <motion.div
                   key={title}
                   variants={childFade}
-                  className="rounded-2xl border border-gray-100 bg-white p-8 transition-shadow duration-300 hover:shadow-md"
+                  className="rounded-2xl border border-[#8C8578/15] bg-white p-8 transition-shadow duration-300 hover:shadow-md"
                 >
                   <div className="mb-5">
                     <Icon />
@@ -280,7 +280,7 @@ export default function AdvisoryPage() {
                   <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                     {title}
                   </h3>
-                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     {desc}
                   </p>
                 </motion.div>
@@ -293,7 +293,7 @@ export default function AdvisoryPage() {
       {/* ══════════════════════════════════════════════════════════════════
           WHO THIS IS FOR
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-4xl">
           <motion.div
             ref={forRef}
@@ -303,7 +303,7 @@ export default function AdvisoryPage() {
           >
             <motion.p
               variants={childFade}
-              className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase"
+              className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase"
             >
               Is This For You?
             </motion.p>
@@ -315,7 +315,7 @@ export default function AdvisoryPage() {
             </motion.h2>
             <motion.div
               variants={childFade}
-              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
+              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]"
             >
               <p>
                 Our advisory service is designed for smallholder and medium-scale farmers in
@@ -355,7 +355,7 @@ export default function AdvisoryPage() {
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 From 200 Birds to a Business
               </h2>
-              <div className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+              <div className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                 <p>
                   One of our clients came to us running a small backyard broiler operation with no
                   financial records, no formal market relationships, no business plan, and no clear

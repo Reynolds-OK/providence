@@ -72,7 +72,7 @@ function ContactItem({
         <Icon size={18} strokeWidth={1.75} className="text-[#8B0000]" />
       </div>
       <div>
-        <p className="mb-0.5 font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-widest text-[#808080]">
+        <p className="mb-0.5 font-[family-name:var(--font-inter)] text-xs font-semibold uppercase tracking-widest text-[#7C7C7C]">
           {label}
         </p>
         <div className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#1a1a1a]">
@@ -180,7 +180,7 @@ function ContactForm() {
         <h3 className="mb-2 font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
           Message Received!
         </h3>
-        <p className="max-w-sm font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+        <p className="max-w-sm font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
           Thank you — We&apos;ve received your message. Our team will get back to you shortly.
         </p>
         <button
@@ -275,7 +275,7 @@ function ContactForm() {
         Send Message
       </button>
 
-      <p className="text-center font-[family-name:var(--font-inter)] text-xs text-[#808080]">
+      <p className="text-center font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
         Fields marked <span className="text-[#8B0000]">*</span> are required. We respect your
         privacy and will never share your details.
       </p>
@@ -296,14 +296,14 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <motion.p
             custom={0}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase"
+            className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase"
           >
             CONTACT
           </motion.p>
@@ -321,7 +321,7 @@ export default function ContactPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
+            className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]"
           >
             Whether you are a retailer seeking a reliable poultry supplier, a farmer who needs
             custom feed, someone ready for advisory support, or a student interested in our
@@ -350,7 +350,7 @@ export default function ContactPage() {
                   <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
                     Reach Us Directly
                   </h2>
-                  <p className="mt-1 font-[family-name:var(--font-inter)] text-sm text-[#808080]">
+                  <p className="mt-1 font-[family-name:var(--font-inter)] text-sm text-[#7C7C7C]">
                     Bambui, North West Region.
                   </p>
                 </div>
@@ -409,7 +409,7 @@ export default function ContactPage() {
                     { day: "Sunday", hours: "Closed" },
                   ].map(({ day, hours }) => (
                     <div key={day} className="flex items-center justify-between gap-4 border-b border-gray-50 pb-2">
-                      <span className="text-[#808080]">{day}</span>
+                      <span className="text-[#7C7C7C]">{day}</span>
                       <span className="font-medium text-[#1a1a1a]">{hours}</span>
                     </div>
                   ))}
@@ -421,7 +421,7 @@ export default function ContactPage() {
                 <h3 className="mb-4 font-[family-name:var(--font-playfair)] text-lg font-bold text-[#1c1c1e]">
                   Find Us
                 </h3>
-                <div className="h-64 overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+                <div className="h-64 overflow-hidden rounded-xl border border-[#8C8578/15] shadow-sm">
                   <iframe
                     title="Providence CIG location — Bambui, Cameroon"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15930.4!2d10.16!3d6.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBambui%2C%20Cameroon!5e0!3m2!1sen!2scm!4v1"
@@ -438,11 +438,11 @@ export default function ContactPage() {
 
             {/* ── Right column: Contact form ── */}
             <motion.div variants={childFade}>
-              <div className="rounded-2xl border border-gray-100 bg-[#faf9f7] p-8 shadow-sm lg:p-10">
+              <div className="rounded-2xl border border-[#8C8578/15] bg-[#f5f4f2] p-8 shadow-sm lg:p-10">
                 <h2 className="mb-2 font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
                   Send Us a Message
                 </h2>
-                <p className="mb-8 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                <p className="mb-8 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                   Fill out the form below and we will get back to you as soon as
                   possible. Alternatively, reach us directly via phone or WhatsApp.
                 </p>

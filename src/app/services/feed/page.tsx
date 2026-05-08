@@ -310,7 +310,7 @@ export default function FeedPage() {
           >
             <motion.p
               variants={childFade}
-              className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase"
+              className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase"
             >
               The Problem
             </motion.p>
@@ -322,7 +322,7 @@ export default function FeedPage() {
             </motion.h2>
             <motion.div
               variants={childFade}
-              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
+              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]"
             >
               <p>
                 Most commercial animal feed is formulated to serve the broadest possible market,
@@ -346,7 +346,7 @@ export default function FeedPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HOW IT WORKS
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={howRef}
@@ -385,7 +385,7 @@ export default function FeedPage() {
                     <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                       {step.title}
                     </h3>
-                    <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                    <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                       {step.desc}
                     </p>
                   </div>
@@ -408,7 +408,7 @@ export default function FeedPage() {
             animate={livestockInView ? "visible" : "hidden"}
           >
             <motion.div variants={childFade} className="mb-14">
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Our Expertise
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -421,13 +421,13 @@ export default function FeedPage() {
                 <motion.div
                   key={name}
                   variants={childFade}
-                  className="flex flex-col gap-4 rounded-2xl border border-gray-100 bg-[#faf9f7] p-8 transition-shadow duration-300 hover:shadow-md"
+                  className="flex flex-col gap-4 rounded-2xl border border-[#8C8578/15] bg-[#f5f4f2] p-8 transition-shadow duration-300 hover:shadow-md"
                 >
                   <Icon />
                   <h3 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-[#1c1c1e]">
                     {name}
                   </h3>
-                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     {desc}
                   </p>
                 </motion.div>

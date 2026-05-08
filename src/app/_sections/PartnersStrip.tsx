@@ -23,7 +23,7 @@ export default function PartnersStrip() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   return (
-    <section className="border-t border-b border-gray-100 bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <section className="border-t border-b border-[#8C8578/15] bg-white px-4 py-16 sm:px-6 lg:px-8">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -53,7 +53,7 @@ export default function PartnersStrip() {
           className="mb-10 flex flex-wrap items-center justify-center gap-6"
         >
           {/* MCF FAST */}
-          <div className="flex h-20 min-w-[160px] items-center justify-center rounded-xl border-2 border-[#1c1c1e]/10 bg-gray-50 px-8 py-4 transition-all duration-200 hover:border-[#8B0000]/30 hover:shadow-md">
+          <div className="flex h-20 min-w-[160px] items-center justify-center rounded-xl border-2 border-[#1c1c1e]/10 bg-[#f5f4f2] px-8 py-4 transition-all duration-200 hover:border-[#8B0000]/30 hover:shadow-md">
             <span className="font-[family-name:var(--font-playfair)] text-xl font-bold tracking-tight text-[#1c1c1e]">
               MCF FAST
             </span>
@@ -66,7 +66,7 @@ export default function PartnersStrip() {
           />
 
           {/* ACE */}
-          <div className="flex h-20 min-w-[160px] items-center justify-center rounded-xl border-2 border-[#1c1c1e]/10 bg-gray-50 px-8 py-4 transition-all duration-200 hover:border-[#8B0000]/30 hover:shadow-md">
+          <div className="flex h-20 min-w-[160px] items-center justify-center rounded-xl border-2 border-[#1c1c1e]/10 bg-[#f5f4f2] px-8 py-4 transition-all duration-200 hover:border-[#8B0000]/30 hover:shadow-md">
             <span className="font-[family-name:var(--font-playfair)] text-xl font-bold tracking-tight text-[#1c1c1e]">
               ACE
             </span>
@@ -76,7 +76,7 @@ export default function PartnersStrip() {
         {/* Body copy */}
         <motion.p
           variants={itemVariants}
-          className="mx-auto max-w-xl font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]"
+          className="mx-auto max-w-xl font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]"
         >
           We are proud to have earned the confidence of leading agricultural development institutions. Their support validates our model, accelerates our capacity, and fuels our shared mission of transforming agriculture in Cameroon and across the continent.
         </motion.p>

@@ -56,7 +56,7 @@ export default function HowWeWork() {
   const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
   return (
-    <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+    <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-16 text-center">
@@ -133,7 +133,7 @@ export default function HowWeWork() {
                 <h3 className="mb-2 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                   {step.title}
                 </h3>
-                <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                   {step.description}
                 </p>
               </motion.div>

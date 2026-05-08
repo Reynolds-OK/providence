@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#faf9f7] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#f5f4f2] flex items-center justify-center px-6">
       <div className="text-center max-w-2xl mx-auto">
         <div className="mb-8">
           <span
@@ -39,7 +39,7 @@ export default function NotFound() {
           >
             Page Not Found
           </h1>
-          <p className="text-[#808080] text-lg mb-10 leading-relaxed">
+          <p className="text-[#7C7C7C] text-lg mb-10 leading-relaxed">
             The page you are looking for doesn&apos;t exist or may have been
             moved. Let&apos;s get you back to familiar ground.
           </p>
@@ -57,8 +57,8 @@ export default function NotFound() {
               Contact Us
             </Link>
           </div>
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <p className="text-sm text-[#808080] mb-4">Or jump to a section:</p>
+          <div className="mt-12 pt-8 border-t border-[#8C8578/25]">
+            <p className="text-sm text-[#7C7C7C] mb-4">Or jump to a section:</p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               {[
                 { label: "Services", href: "/services/poultry" },

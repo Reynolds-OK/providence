@@ -515,7 +515,7 @@ export default function InternshipPage() {
             </motion.h2>
             <motion.div
               variants={childFade}
-              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]"
+              className="mt-8 space-y-6 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]"
             >
               <p>
                 Agriculture is one of Africa&apos;s most powerful economic engines and it desperately
@@ -538,7 +538,7 @@ export default function InternshipPage() {
       {/* ══════════════════════════════════════════════════════════════════
           WHAT INTERNS EXPERIENCE
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={expRef}
@@ -547,7 +547,7 @@ export default function InternshipPage() {
             animate={expInView ? "visible" : "hidden"}
           >
             <motion.div variants={childFade} className="mb-14">
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Inside the Programme
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -566,7 +566,7 @@ export default function InternshipPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                     {title}
                   </h3>
-                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     {desc}
                   </p>
                 </motion.div>
@@ -588,7 +588,7 @@ export default function InternshipPage() {
             animate={detailsInView ? "visible" : "hidden"}
           >
             <motion.div variants={childFade} className="mb-12">
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Programme Information
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -598,14 +598,14 @@ export default function InternshipPage() {
 
             <motion.div
               variants={childFade}
-              className="overflow-hidden rounded-2xl border border-gray-200"
+              className="overflow-hidden rounded-2xl border border-[#8C8578/25]"
             >
               {programmeDetails.map(({ label, value }, idx) => (
                 <div
                   key={label}
                   className={cn(
                     "flex flex-col gap-2 px-8 py-5 sm:flex-row sm:gap-8",
-                    idx % 2 === 0 ? "bg-white" : "bg-[#faf9f7]"
+                    idx % 2 === 0 ? "bg-white" : "bg-[#f5f4f2]"
                   )}
                 >
                   <dt className="w-full font-[family-name:var(--font-inter)] text-sm font-bold text-[#8B0000] sm:w-48 sm:flex-shrink-0">
@@ -624,7 +624,7 @@ export default function InternshipPage() {
       {/* ══════════════════════════════════════════════════════════════════
           TESTIMONIALS
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={testimonialsRef}
@@ -672,7 +672,7 @@ export default function InternshipPage() {
                       <p className="font-[family-name:var(--font-inter)] text-sm font-bold text-[#1c1c1e]">
                         {name}
                       </p>
-                      <p className="font-[family-name:var(--font-inter)] text-xs text-[#808080]">
+                      <p className="font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
                         {institution} &middot; {department}
                       </p>
                     </div>
@@ -702,7 +702,7 @@ export default function InternshipPage() {
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 Ready to Apply? Let&apos;s Talk.
               </h2>
-              <p className="mx-auto mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+              <p className="mx-auto mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                 Applications are reviewed on a rolling basis. Fill in the form below and our team
                 will be in touch within five business days.
               </p>
@@ -732,7 +732,7 @@ export default function InternshipPage() {
                 <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-2xl font-bold text-[#1c1c1e]">
                   Thank you for applying to Providence CIG.
                 </h3>
-                <p className="font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+                <p className="font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                   We have received your application and will be in touch within five business days.
                   In the meantime, feel free to explore our services and learn more about what we do.
                 </p>
@@ -836,7 +836,7 @@ export default function InternshipPage() {
                     <span className="ml-1 text-[#8B0000]" aria-hidden="true">
                       *
                     </span>
-                    <span className="ml-2 font-normal text-[#808080]">
+                    <span className="ml-2 font-normal text-[#7C7C7C]">
                       (.pdf, .doc, .docx — max 5 MB)
                     </span>
                   </label>
@@ -847,7 +847,7 @@ export default function InternshipPage() {
                       cvError
                         ? "border-[#8B0000] bg-red-50"
                         : cvFile
-                        ? "border-[#8B0000]/50 bg-[#faf9f7]"
+                        ? "border-[#8B0000]/50 bg-[#f5f4f2]"
                         : "border-gray-300 bg-white hover:border-[#8B0000]/50"
                     )}
                     onClick={() => fileInputRef.current?.click()}
@@ -896,13 +896,13 @@ export default function InternshipPage() {
                         <p className="font-[family-name:var(--font-inter)] text-sm font-semibold text-[#8B0000]">
                           {cvFile.name}
                         </p>
-                        <p className="font-[family-name:var(--font-inter)] text-xs text-[#808080]">
+                        <p className="font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
                           {(cvFile.size / 1024).toFixed(0)} KB &middot; Click to change
                         </p>
                       </div>
                     ) : (
                       <div>
-                        <p className="font-[family-name:var(--font-inter)] text-sm text-[#808080]">
+                        <p className="font-[family-name:var(--font-inter)] text-sm text-[#7C7C7C]">
                           Click to upload your CV or resume
                         </p>
                         <p className="font-[family-name:var(--font-inter)] text-xs text-gray-400">
@@ -935,7 +935,7 @@ export default function InternshipPage() {
                   {submitting ? "Submitting…" : "Submit My Application"}
                 </button>
 
-                <p className="text-center font-[family-name:var(--font-inter)] text-xs text-[#808080]">
+                <p className="text-center font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
                   By submitting this form you agree for Providence CIG to retain your information
                   for the purposes of this application.
                 </p>

@@ -59,7 +59,7 @@ export default function ServicesPage() {
             <Link
               key={service.href}
               href={service.href}
-              className="group block border border-gray-100 rounded-2xl p-10 md:p-14 hover:border-[#8B0000]/30 hover:shadow-xl transition-all duration-300"
+              className="group block border border-[#8C8578/15] rounded-2xl p-10 md:p-14 hover:border-[#8B0000]/30 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-6">
                 <span
@@ -75,7 +75,7 @@ export default function ServicesPage() {
                   >
                     {service.title}
                   </h2>
-                  <p className="text-[#808080] text-lg leading-relaxed">
+                  <p className="text-[#7C7C7C] text-lg leading-relaxed">
                     {service.description}
                   </p>
                 </div>

@@ -45,7 +45,7 @@ function DesktopDropdown({
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 6 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
-      className="absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 overflow-hidden rounded-xl border border-gray-100 bg-white shadow-xl ring-1 ring-black/5"
+      className="absolute left-1/2 top-full z-50 mt-3 w-56 -translate-x-1/2 overflow-hidden rounded-xl border border-[#8C8578/15] bg-white shadow-xl ring-1 ring-black/5"
     >
       {items.map(({ label, href }) => (
         <Link
@@ -266,7 +266,7 @@ export default function Navbar() {
               aria-label="Navigation menu"
             >
               {/* Panel header */}
-              <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
+              <div className="flex items-center justify-between border-b border-[#8C8578/15] px-5 py-4">
                 <Link
                   href="/"
                   onClick={() => setMobileOpen(false)}
@@ -288,7 +288,7 @@ export default function Navbar() {
                 <button
                   onClick={() => setMobileOpen(false)}
                   aria-label="Close menu"
-                  className="rounded-lg p-2 text-[#808080] transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                  className="rounded-lg p-2 text-[#7C7C7C] transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
                 >
                   <X size={22} strokeWidth={2} />
                 </button>
@@ -305,14 +305,14 @@ export default function Navbar() {
                             setMobileServicesOpen((prev) => !prev)
                           }
                           aria-expanded={mobileServicesOpen}
-                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f5f4f2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
                         >
                           {link.label}
                           <ChevronDown
                             size={16}
                             strokeWidth={2}
                             className={cn(
-                              "text-[#808080] transition-transform duration-200",
+                              "text-[#7C7C7C] transition-transform duration-200",
                               mobileServicesOpen && "rotate-180"
                             )}
                           />
@@ -332,7 +332,7 @@ export default function Navbar() {
                                   <Link
                                     href={href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="flex items-center gap-3 rounded-xl py-2.5 pl-10 pr-4 text-sm text-[#808080] transition hover:bg-gray-50 hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                                    className="flex items-center gap-3 rounded-xl py-2.5 pl-10 pr-4 text-sm text-[#7C7C7C] transition hover:bg-[#f5f4f2] hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
                                   >
                                     <span className="h-px w-3 bg-[#8B0000]" />
                                     {label}
@@ -348,7 +348,7 @@ export default function Navbar() {
                         <Link
                           href={link.href!}
                           onClick={() => setMobileOpen(false)}
-                          className="block rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-gray-50 hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                          className="block rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f5f4f2] hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
                         >
                           {link.label}
                         </Link>
@@ -359,7 +359,7 @@ export default function Navbar() {
               </nav>
 
               {/* Panel footer */}
-              <div className="border-t border-gray-100 px-5 py-5">
+              <div className="border-t border-[#8C8578/15] px-5 py-5">
                 <Link
                   href="/contact"
                   onClick={() => setMobileOpen(false)}
@@ -367,7 +367,7 @@ export default function Navbar() {
                 >
                   Get in Touch
                 </Link>
-                <address className="mt-4 space-y-1 not-italic text-xs text-[#808080]">
+                <address className="mt-4 space-y-1 not-italic text-xs text-[#7C7C7C]">
                   <p>+237 XXX XXX XXX</p>
                   <p>cig.providence@gmail.com</p>
                   <p>Bambui, Cameroon</p>

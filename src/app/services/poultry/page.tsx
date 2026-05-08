@@ -168,13 +168,13 @@ export default function PoultryPage() {
           >
             {/* Text */}
             <motion.div variants={childFade}>
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Layer Production
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 Fresh Eggs at Commercial Scale
               </h2>
-              <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+              <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                 Our laying hens are raised in clean, well-managed environments and fed nutritionally
                 balanced feed, which means the eggs we produce are consistently fresh, nutrient-rich,
                 and market-ready. We supply in bulk to wholesalers and in flexible quantities to retail
@@ -210,7 +210,7 @@ export default function PoultryPage() {
       {/* ══════════════════════════════════════════════════════════════════
           BROILERS SECTION
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={broilersRef}
@@ -228,13 +228,13 @@ export default function PoultryPage() {
 
             {/* Text — right on desktop */}
             <motion.div variants={childFade} className="order-1 lg:order-2">
-              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 Broiler Production
               </p>
               <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 Broilers Ready for the Market
               </h2>
-              <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+              <p className="mt-5 font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                 Our broilers are raised to optimal market weight under controlled, hygienic conditions.
                 We supply live birds or can arrange dressing on request, depending on your market
                 requirements. Whether you are a market trader, butcher, hotel supplier, or wholesale
@@ -313,7 +313,7 @@ export default function PoultryPage() {
           >
             <motion.p
               variants={childFade}
-              className="mb-10 text-center font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase"
+              className="mb-10 text-center font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase"
             >
               How It Works
             </motion.p>
@@ -344,7 +344,7 @@ export default function PoultryPage() {
                   <h3 className="font-[family-name:var(--font-playfair)] text-lg font-bold text-[#1c1c1e]">
                     {step.label}
                   </h3>
-                  <p className="mt-2 max-w-[180px] font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="mt-2 max-w-[180px] font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     {step.desc}
                   </p>
                 </motion.div>

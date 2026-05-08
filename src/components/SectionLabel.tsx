@@ -9,7 +9,7 @@ export default function SectionLabel({ label, className }: SectionLabelProps) {
   return (
     <span
       className={cn(
-        "block text-xs font-semibold uppercase tracking-widest text-[#808080]",
+        "block text-xs font-semibold uppercase tracking-widest text-[#7C7C7C]",
         className
       )}
     >

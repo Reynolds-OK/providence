@@ -4,8 +4,12 @@
   --background: #ffffff;
   --foreground: #1a1a1a;
   --crimson: #8B0000;
-  --slate: #808080;
+  --crimson-dark: #6e0000;
+  --slate: #7C7C7C;
   --taupe: #8C8578;
+  --taupe-50: #f5f4f2;
+  --taupe-100: #eceae7;
+  --charcoal: #1c1c1e;
 }
 
 @theme inline {

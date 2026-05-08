@@ -280,13 +280,13 @@ export default function ServicesStrip() {
             <motion.div
               key={card.title}
               variants={cardVariants}
-              className="group flex flex-col rounded-2xl border border-gray-100 border-l-4 border-l-[#8B0000] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              className="group flex flex-col rounded-2xl border border-[#8C8578/15] border-l-4 border-l-[#8B0000] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="mb-5">{card.icon}</div>
               <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                 {card.title}
               </h3>
-              <p className="flex-1 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+              <p className="flex-1 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                 {card.description}
               </p>
               <Link

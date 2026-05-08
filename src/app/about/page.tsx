@@ -269,14 +269,14 @@ export default function AboutPage() {
               <div className="flex items-start gap-5">
                 <div className="mt-1 w-[3px] flex-shrink-0 self-stretch bg-[#8B0000] rounded-full" style={{ minHeight: "100%" }} />
                 <div>
-                  <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+                  <p className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                     Our Story
                   </p>
                   <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl lg:text-5xl">
                     Where It All Began
                   </h2>
                   <div className="mt-8 h-px w-16 bg-[#8B0000]" />
-                  <p className="mt-6 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="mt-6 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     Founded in the highlands of Bambui, Providence CIG emerged
                     from a shared vision — that agriculture could be both a
                     livelihood and a legacy.
@@ -363,11 +363,11 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════════
           OUR VALUES
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           {/* Header */}
           <div className="mb-14">
-            <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+            <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
               What We Stand For
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -387,7 +387,7 @@ export default function AboutPage() {
               <motion.div
                 key={title}
                 variants={childFade}
-                className="group rounded-2xl border border-gray-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
+                className="group rounded-2xl border border-[#8C8578/15] bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-md"
               >
                 <div className="mb-5">
                   <Icon />
@@ -395,7 +395,7 @@ export default function AboutPage() {
                 <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                   {title}
                 </h3>
-                <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                   {description}
                 </p>
               </motion.div>
@@ -417,13 +417,13 @@ export default function AboutPage() {
           >
             {/* Header */}
             <motion.div variants={childFade} className="mb-14">
-              <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 THE PEOPLE BEHIND THE WORK
               </p>
               <h2 className="max-w-2xl font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
                 A Team That Knows Agriculture from the Inside Out.
               </h2>
-              <p className="mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#808080]">
+              <p className="mt-5 max-w-2xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]">
                 Our team brings together expertise in agronomy, animal nutrition, veterinary
                 science, and business management. We are practitioners first. Every
                 recommendation we make is grounded in real experience, not just theory.
@@ -436,7 +436,7 @@ export default function AboutPage() {
                 <motion.div
                   key={name}
                   variants={childFade}
-                  className="flex flex-col items-center rounded-2xl border border-gray-100 bg-[#faf9f7] p-8 text-center shadow-sm transition-shadow duration-300 hover:shadow-md"
+                  className="flex flex-col items-center rounded-2xl border border-[#8C8578/15] bg-[#f5f4f2] p-8 text-center shadow-sm transition-shadow duration-300 hover:shadow-md"
                 >
                   {/* Avatar */}
                   <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#8B0000] text-lg font-bold text-white font-[family-name:var(--font-playfair)] shadow-md">
@@ -445,7 +445,7 @@ export default function AboutPage() {
                   <p className="mt-1 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-wide text-[#8B0000] uppercase">
                     {title}
                   </p>
-                  <p className="mt-4 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="mt-4 font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     {bio}
                   </p>
                 </motion.div>
@@ -458,7 +458,7 @@ export default function AboutPage() {
       {/* ══════════════════════════════════════════════════════════════════
           PARTNERS
       ══════════════════════════════════════════════════════════════════ */}
-      <section id="partners" className="bg-[#faf9f7] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <section id="partners" className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <motion.div
             ref={partnersRef}
@@ -468,7 +468,7 @@ export default function AboutPage() {
           >
             {/* Header */}
             <motion.div variants={childFade} className="mb-14">
-              <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#808080] uppercase">
+              <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase">
                 OUR PARTNERS
               </p>
               <h2 className="max-w-2xl font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-4xl">
@@ -482,12 +482,12 @@ export default function AboutPage() {
               <motion.div
                 variants={childFade}
                 className={cn(
-                  "flex flex-col gap-8 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm",
+                  "flex flex-col gap-8 rounded-2xl border border-[#8C8578/15] bg-white p-8 shadow-sm",
                   "sm:flex-row sm:items-start sm:gap-10"
                 )}
               >
                 {/* Logo placeholder */}
-                <div className="flex h-24 w-40 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-[#8B0000]/30 bg-[#faf9f7] text-center">
+                <div className="flex h-24 w-40 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-[#8B0000]/30 bg-[#f5f4f2] text-center">
                   <span className="font-[family-name:var(--font-playfair)] text-sm font-bold text-[#8B0000] leading-tight px-2">
                     MCF FAST
                   </span>
@@ -496,7 +496,7 @@ export default function AboutPage() {
                   <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                     MCF FAST (Micro-Credit Foundation — Farmer Agri-Support Training)
                   </h3>
-                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     The MCF FAST programme recognized Providence CIG as a high-impact, scalable
                     solution for smallholder farmer empowerment and commercial agri-production.
                     Their backing has accelerated our operational capacity and extended our reach
@@ -509,12 +509,12 @@ export default function AboutPage() {
               <motion.div
                 variants={childFade}
                 className={cn(
-                  "flex flex-col gap-8 rounded-2xl border border-gray-100 bg-white p-8 shadow-sm",
+                  "flex flex-col gap-8 rounded-2xl border border-[#8C8578/15] bg-white p-8 shadow-sm",
                   "sm:flex-row sm:items-start sm:gap-10"
                 )}
               >
                 {/* Logo placeholder */}
-                <div className="flex h-24 w-40 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-[#8B0000]/30 bg-[#faf9f7] text-center">
+                <div className="flex h-24 w-40 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-[#8B0000]/30 bg-[#f5f4f2] text-center">
                   <span className="font-[family-name:var(--font-playfair)] text-sm font-bold text-[#8B0000] leading-tight px-2">
                     ACE
                   </span>
@@ -523,7 +523,7 @@ export default function AboutPage() {
                   <h3 className="mb-3 font-[family-name:var(--font-playfair)] text-xl font-bold text-[#1c1c1e]">
                     ACE (Agricultural Capacity and Entrepreneurship Programme)
                   </h3>
-                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#808080]">
+                  <p className="font-[family-name:var(--font-inter)] text-sm leading-relaxed text-[#7C7C7C]">
                     Our partnership with ACE has connected us to a broader network of agricultural
                     entrepreneurs, development institutions, investors, and changemakers,
                     strengthening both our operations and the quality of our advisory programmes.
