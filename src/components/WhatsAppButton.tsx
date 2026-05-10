@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/237XXXXXXXXX?text=Hello%20Providence%20CIG%2C%20I%27d%20like%20to%20enquire%20about...";
+  "https://wa.me/237679105237?text=Hello%20Providence%20CIG%2C%20I%27d%20like%20to%20enquire%20about...";
 
 export default function WhatsAppButton() {
   const [hovered, setHovered] = useState(false);

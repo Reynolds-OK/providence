@@ -402,7 +402,7 @@ export default function ContactPage() {
                 <ContactItem icon={MessageCircle} label="WhatsApp">
                   <div className="flex items-center gap-3">
                     <a
-                      href="https://wa.me/237XXXXXXXXX"
+                      href="https://wa.me/237679105237"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 rounded-lg bg-[#25D366] px-4 py-1.5 font-[family-name:var(--font-inter)] text-xs font-semibold text-white transition hover:bg-[#1ebe5a] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2"
