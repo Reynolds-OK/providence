@@ -182,21 +182,21 @@ const programmeDetails = [
 ];
 
 const testimonials = [
-  // {
-  //   initials: "AGM",
-  //   name: "ANUBONDEM GODWIN MBOWOH",
-  //   institution: "University of Buea",
-  //   department: "4th Year Veterinary Medicine student",
-  //   quote:
-  //     "The poultry farm is located in a village called Basse of the Bamougoum subdivision, Mifi division of the West Region (Bafoussam) of Cameroon, with Mr. NKenganyi Tiku Justin being the CEO of Providence CIG and happen to be the one who trained me during the internship period.",
-  // },
+  {
+    initials: "AGM",
+    name: "ANUBONDEM GODWIN MBOWOH",
+    institution: "University of Buea",
+    department: "4th Year Veterinary Medicine student",
+    quote:
+      "The poultry farm is located in a village called Basse of the Bamougoum subdivision, Mifi division of the West Region (Bafoussam) of Cameroon, with Mr. NKenganyi Tiku Justin being the CEO of Providence CIG and happen to be the one who trained me during the internship period.",
+  },
   {
     initials: "TKJ",
     name: "TIENTCHEU KADJI JORDAN",
     institution: "University of Buea",
     department: "4th Year Veterinary Medicine student",
     quote:
-      "I had the opportunity to complete a one-month internship at Providence CIG Layer Farm, Bafoussam branch. During my stay, I gained practical experience in poultry management, feeding systems, bird care, and large-scale production processes. Working closely with Mr. Justin gave me valuable insight into both layer and broiler farming, feed requirements, and profit maximization. I am sincerely grateful for the hospitality and knowledge shared with me, and I highly recommend Providence CIG to young Cameroonians interested in gaining hands-on experience in the poultry sector.",
+      "I completed a one-month internship at Providence CIG Layer Farm in Bafoussam, where I was exposed to practical poultry operations including flock management, feeding routines, and production workflows. The experience strengthened my understanding of both layer and broiler systems, as well as the operational decisions behind efficient poultry farming. I appreciated the guidance from Mr. Justin and the team, which provided valuable industry exposure and practical learning.",
   },
   {
     initials: "NFN",
