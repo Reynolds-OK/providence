@@ -182,14 +182,14 @@ const programmeDetails = [
 ];
 
 const testimonials = [
-  {
-    initials: "AGM",
-    name: "ANUBONDEM GODWIN MBOWOH",
-    institution: "University of Buea",
-    department: "4th Year Veterinary Medicine student",
-    quote:
-      "The poultry farm is located in a village called Basse of the Bamougoum subdivision, Mifi division of the West Region (Bafoussam) of Cameroon, with Mr. NKenganyi Tiku Justin being the CEO of Providence CIG and happen to be the one who trained me during the internship period.",
-  },
+  // {
+  //   initials: "AGM",
+  //   name: "ANUBONDEM GODWIN MBOWOH",
+  //   institution: "University of Buea",
+  //   department: "4th Year Veterinary Medicine student",
+  //   quote:
+  //     "The poultry farm is located in a village called Basse of the Bamougoum subdivision, Mifi division of the West Region (Bafoussam) of Cameroon, with Mr. NKenganyi Tiku Justin being the CEO of Providence CIG and happen to be the one who trained me during the internship period.",
+  // },
   {
     initials: "TKJ",
     name: "TIENTCHEU KADJI JORDAN",
