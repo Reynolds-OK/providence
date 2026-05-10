@@ -56,7 +56,7 @@ export default function HeroSection() {
           animate={visible(0)}
           className="mb-6 font-[family-name:var(--font-inter)] text-xs tracking-[0.25em] text-[#ffffff] uppercase"
         >
-          Bambui, Cameroon &nbsp;|&nbsp; Agribusiness
+          Cameroon &nbsp;|&nbsp; Agribusiness
         </motion.p>
 
         {/* Headline */}
@@ -77,8 +77,7 @@ export default function HeroSection() {
           className="mx-auto mt-6 max-w-2xl font-[family-name:var(--font-inter)] text-lg leading-relaxed text-gray-300 md:text-xl"
         >
           We produce quality poultry, craft customized animal feed, and advise
-          farmers who are ready to grow. Agriculture, done with purpose — from
-          Bambui, for Cameroon, and beyond.
+          farmers who are ready to grow.
         </motion.p>
 
         {/* CTA Buttons */}

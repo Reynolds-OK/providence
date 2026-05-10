@@ -183,37 +183,37 @@ const programmeDetails = [
 
 const testimonials = [
   {
-    initials: "EA",
-    name: "Esi Awouma",
-    institution: "University of Bamenda",
-    department: "BSc Animal Science, Poultry Operations",
+    initials: "AGM",
+    name: "ANUBONDEM GODWIN MBOWOH",
+    institution: "University of Buea",
+    department: "4th Year Veterinary Medicine student",
     quote:
-      "Providence CIG gave me my first real exposure to commercial poultry at scale. I came in thinking I understood layers from class. I left understanding what it actually takes to run a profitable production house. That gap is enormous — and this internship closes it.",
+      "The poultry farm is located in a village called Basse of the Bamougoum subdivision, Mifi division of the West Region (Bafoussam) of Cameroon, with Mr. NKenganyi Tiku Justin being the CEO of Providence CIG and happen to be the one who trained me during the internship period.",
   },
   {
-    initials: "SN",
-    name: "Samuel Nkeng",
-    institution: "University of Dschang",
-    department: "BSc Nutrition, Feed Lab",
+    initials: "TKJ",
+    name: "TIENTCHEU KADJI JORDAN",
+    institution: "University of Buea",
+    department: "4th Year Veterinary Medicine student",
     quote:
-      "The advisory rotation was the highlight for me. Sitting across from a real farmer trying to turn a struggling pig operation into a viable business — that taught me more about practical agribusiness than two years of lectures combined.",
+      "I had the opportunity to complete a one-month internship at Providence CIG Layer Farm, Bafoussam branch. During my stay, I gained practical experience in poultry management, feeding systems, bird care, and large-scale production processes. Working closely with Mr. Justin gave me valuable insight into both layer and broiler farming, feed requirements, and profit maximization. I am sincerely grateful for the hospitality and knowledge shared with me, and I highly recommend Providence CIG to young Cameroonians interested in gaining hands-on experience in the poultry sector.",
   },
   {
-    initials: "PT",
-    name: "Priscilla Tankwa",
-    institution: "Bamenda University of Science and Technology",
-    department: "Agribusiness, Advisory",
+    initials: "NFN",
+    name: "Nforya Fulbert Nfinyoh",
+    institution: "University of Buea",
+    department: "4th Year Veterinary Medicine Student",
     quote:
-      "What I appreciated most was the mentorship. My mentor never made me feel like I was just here to observe. I was asked for opinions. I was challenged. I made mistakes and learned from them. That is the kind of environment that actually builds competence.",
+      "My internship at Providence CIG Layer Farm in Bafoussam was one of my best experiences in poultry production and layer farming. I gained practical knowledge in farm management, feed formulation, and productivity improvement for both layers and broilers. The experience also gave me valuable insight into the business side of poultry farming. Today, the knowledge acquired continues to help me as a poultry farmer and consultant. I highly recommend Providence CIG to young agricultural enthusiasts seeking practical experience in poultry production.",
   },
-  {
-    initials: "YM",
-    name: "Yves Mbunwe",
-    institution: "Bamenda Polytechnic",
-    department: "HND Agriculture, General Operations",
-    quote:
-      "I came in wanting to understand feed formulation from a business angle. I left with a clear career direction, a strong reference letter, and a network inside an organisation I genuinely respect. Providence CIG treats interns like future colleagues.",
-  },
+  // {
+  //   initials: "YM",
+  //   name: "Yves Mbunwe",
+  //   institution: "Bamenda Polytechnic",
+  //   department: "HND Agriculture, General Operations",
+  //   quote:
+  //     "I came in wanting to understand feed formulation from a business angle. I left with a clear career direction, a strong reference letter, and a network inside an organisation I genuinely respect. Providence CIG treats interns like future colleagues.",
+  // },
 ];
 
 /* ─── Form types ─────────────────────────────────────────────────────────── */

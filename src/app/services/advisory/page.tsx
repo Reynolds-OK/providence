@@ -187,7 +187,7 @@ export default function AdvisoryPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/advisory.png"
+          src="/images/poultry-advisory.jpg"
           fill
           className="object-cover"
           alt="Advisory consultation"
@@ -218,7 +218,7 @@ export default function AdvisoryPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
+            className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#ffffff] uppercase"
           >
             AGRICULTURAL ADVISORY
           </motion.p>

@@ -13,6 +13,7 @@ interface ServiceCard {
   description: string;
   href: string;
   accent: string;
+  type: string;
 }
 
 const cards: ServiceCard[] = [
@@ -23,6 +24,7 @@ const cards: ServiceCard[] = [
       "Fresh eggs and quality broilers, supplied reliably to retailers and wholesalers across the region.",
     href: "/services/poultry",
     accent: "#8B0000",
+    type: "Product",
   },
   {
     image: "/images/feed.jpg",
@@ -31,14 +33,16 @@ const cards: ServiceCard[] = [
       "Specifically formulated feed blends, engineered around your specific livestock and production goals.",
     href: "/services/feed",
     accent: "#A16207",
+    type: "Product",
   },
   {
-    image: "/images/advisory.png",
-    title: "Agricultural Advisory",
+    image: "/images/poultry-advisory.jpg",
+    title: "Poultry Farming Advisory",
     description:
       "Business guidance for farmers who are ready to move from survival to scale.",
     href: "/services/advisory",
     accent: "#166534",
+    type: "Service",
   },
 ];
 
@@ -136,7 +140,7 @@ export default function ServicesStrip() {
                     backgroundColor: `${card.accent}CC`,
                   }}
                 >
-                  Service
+                  {card.type}
                 </div>
 
                 {/* Title over image */}

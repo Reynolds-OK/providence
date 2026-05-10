@@ -93,7 +93,7 @@ export default function PoultryPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/eggs-tray.png"
+          src="/images/eggs.jpeg"
           fill
           className="object-cover"
           alt="Eggs tray"
@@ -126,7 +126,7 @@ export default function PoultryPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#8B0000] uppercase"
+            className="mb-5 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.25em] text-[#ffffff] uppercase"
           >
             POULTRY PRODUCTION
           </motion.p>
