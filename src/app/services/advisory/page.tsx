@@ -187,7 +187,7 @@ export default function AdvisoryPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/advisory-meeting.webp"
+          src="/images/advisory.png"
           fill
           className="object-cover"
           alt="Advisory consultation"

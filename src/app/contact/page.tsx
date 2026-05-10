@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { MapPin, Phone, Mail, MessageCircle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 /* ─── Animation helpers ──────────────────────────────────────────────────── */
 
@@ -230,7 +231,7 @@ function ContactForm() {
             name="phone"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+237 XXX XXX XXX"
+            placeholder="+237679105237"
             className={inputClass(false)}
             autoComplete="tel"
           />
@@ -296,14 +297,23 @@ export default function ContactPage() {
       {/* ══════════════════════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════════════════════ */}
-      <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="bg-[#1c1c1e] px-4 py-20 sm:px-6 lg:px-8">
+        {/* Background image */}
+        {/* <Image
+          src="/images/business.jpg"
+          fill
+          className="object-cover"
+          alt="Providence CIG farm"
+        /> */}
+
+        {/* Dark overlay */}
+        <div className="mx-auto max-w-7xl mt-10">
           <motion.p
             custom={0}
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#7C7C7C] uppercase"
+            className="mb-4 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#ffffff] uppercase"
           >
             CONTACT
           </motion.p>
@@ -312,7 +322,7 @@ export default function ContactPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="font-[family-name:var(--font-playfair)] text-5xl font-bold text-[#1c1c1e]"
+            className="font-[family-name:var(--font-playfair)] text-5xl font-bold text-[#ffffff]"
           >
             Let&apos;s Start a Conversation.
           </motion.h1>
@@ -321,7 +331,7 @@ export default function ContactPage() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#7C7C7C]"
+            className="mt-4 max-w-xl font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#ffffff]"
           >
             Whether you are a retailer seeking a reliable poultry supplier, a farmer who needs
             custom feed, someone ready for advisory support, or a student interested in our
@@ -329,6 +339,16 @@ export default function ContactPage() {
           </motion.p>
         </div>
       </section>
+
+      {/* crosshatch grid overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px)",
+        }}
+      />
 
       {/* ══════════════════════════════════════════════════════════════════
           TWO-COLUMN LAYOUT
@@ -363,10 +383,10 @@ export default function ContactPage() {
 
                 <ContactItem icon={Phone} label="Phone">
                   <a
-                    href="tel:+237XXXXXXXXX"
+                    href="tel:+237679105237"
                     className="transition-colors hover:text-[#8B0000]"
                   >
-                    +237 XXX XXX XXX
+                    +237679105237
                   </a>
                 </ContactItem>
 
@@ -470,14 +490,14 @@ export default function ContactPage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <a
-              href="tel:+237XXXXXXXXX"
+              href="tel:+237679105237"
               className="inline-flex items-center gap-2 rounded-lg bg-white px-7 py-3 font-[family-name:var(--font-inter)] text-sm font-semibold text-[#8B0000] shadow-sm transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Phone size={15} strokeWidth={2} />
               Call Us Now
             </a>
             <a
-              href="https://wa.me/237XXXXXXXXX"
+              href="https://wa.me/237679105237"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-white/60 bg-white/10 px-7 py-3 font-[family-name:var(--font-inter)] text-sm font-semibold text-white transition hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"

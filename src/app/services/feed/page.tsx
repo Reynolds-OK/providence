@@ -238,7 +238,7 @@ export default function FeedPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/feed-grains.png"
+          src="/images/animal-feed.jpg"
           fill
           className="object-cover"
           alt="Animal feed grains"

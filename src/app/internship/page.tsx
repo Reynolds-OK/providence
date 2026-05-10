@@ -511,7 +511,7 @@ export default function InternshipPage() {
               variants={childFade}
               className="font-[family-name:var(--font-playfair)] text-3xl font-bold text-[#1c1c1e] md:text-5xl"
             >
-              The Future of African Agriculture Is Being Built Right Now.
+              Grow Your Future In Agriculture.
             </motion.h2>
             <motion.div
               variants={childFade}

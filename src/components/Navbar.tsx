@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -63,6 +64,8 @@ function DesktopDropdown({
 /* ─── Main Navbar ────────────────────────────────────────────────────────── */
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState<string | null>(null);
@@ -73,19 +76,24 @@ export default function Navbar() {
   /* Track scroll */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
+
+    onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
+
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
-  /* Desktop dropdown handlers with delay for smooth UX */
+  /* Desktop dropdown handlers */
   const openDropdown = useCallback((label: string) => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current);
     setDesktopDropdownOpen(label);
@@ -103,54 +111,33 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Utility bar (desktop only) ── */}
-      <AnimatePresence>
-        {!scrolled && (
-          <motion.div
-            key="utility-bar"
-            initial={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="hidden overflow-hidden bg-[#8B0000] lg:block"
-          >
-            <div className="mx-auto flex max-w-7xl items-center justify-center gap-6 px-4 py-1.5 text-xs text-white/90 sm:px-6 lg:px-8">
-              <span>+237 XXX XXX XXX</span>
-              <span aria-hidden="true" className="opacity-40">
-                |
-              </span>
-              <a
-                href="mailto:cig.providence@gmail.com"
-                className="hover:text-white transition-colors"
-              >
-                cig.providence@gmail.com
-              </a>
-              <span aria-hidden="true" className="opacity-40">
-                |
-              </span>
-              <span>Bambui, Cameroon</span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* ── Main nav ── */}
       <header
         className={cn(
-          "sticky top-0 z-40 w-full bg-white transition-shadow duration-300",
-          scrolled ? "shadow-md" : "shadow-sm"
+          "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300",
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-md"
+            : "bg-transparent"
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           {/* Logo */}
-          <Link href="/" className="group flex items-center gap-3 flex-shrink-0">
+          <Link
+            href="/"
+            className="group flex items-center gap-3 flex-shrink-0"
+          >
             <Image
               src="/images/logo.png"
               alt="Providence CIG Logo"
               width={56}
               height={56}
             />
+
             <span
-              className="text-base font-bold leading-tight text-[#1a1a1a] transition-colors"
+              className={cn(
+                "text-base font-bold leading-tight transition-colors duration-300",
+                scrolled ? "text-[#1a1a1a]" : "text-white"
+              )}
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Providence CIG
@@ -158,10 +145,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
+          <nav
+            className="hidden items-center gap-1 lg:flex"
+            aria-label="Main navigation"
+          >
             {navLinks.map((link) =>
               link.children ? (
-                /* Dropdown trigger */
                 <div
                   key={link.label}
                   className="relative"
@@ -173,9 +162,15 @@ export default function Navbar() {
                     onBlur={closeDropdown}
                     aria-haspopup="true"
                     aria-expanded={desktopDropdownOpen === link.label}
-                    className="flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium text-[#1a1a1a] transition-colors hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                    className={cn(
+                      "flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]",
+                      scrolled
+                        ? "text-[#1a1a1a] hover:text-[#8B0000]"
+                        : "text-white hover:text-[#f5d0d0]"
+                    )}
                   >
                     {link.label}
+
                     <ChevronDown
                       size={14}
                       strokeWidth={2}
@@ -185,6 +180,7 @@ export default function Navbar() {
                       )}
                     />
                   </button>
+
                   <AnimatePresence>
                     {desktopDropdownOpen === link.label && (
                       <div
@@ -200,7 +196,14 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href!}
-                  className="rounded-lg px-4 py-2 text-sm font-medium text-[#1a1a1a] transition-colors hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                  className={cn(
+                    "rounded-lg px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]",
+                    pathname === link.href
+                      ? "text-[#8B0000]"
+                      : scrolled
+                      ? "text-[#1a1a1a] hover:text-[#8B0000]"
+                      : "text-white hover:text-[#f5d0d0]"
+                  )}
                 >
                   {link.label}
                 </Link>
@@ -218,18 +221,24 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile: CTA + hamburger */}
+          {/* Mobile actions */}
           <div className="flex items-center gap-3 lg:hidden">
             <Link
               href="/contact"
-              className="rounded-lg bg-[#8B0000] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#6e0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+              className="rounded-lg bg-[#8B0000] px-4 py-2 text-xs font-semibold text-white transition hover:bg-[#6e0000]"
             >
               Get in Touch
             </Link>
+
             <button
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
-              className="rounded-lg p-2 text-[#1a1a1a] transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+              className={cn(
+                "rounded-lg p-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]",
+                scrolled
+                  ? "text-[#1a1a1a] hover:bg-gray-100"
+                  : "text-white hover:bg-white/10"
+              )}
             >
               <Menu size={22} strokeWidth={2} />
             </button>
@@ -237,7 +246,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ── Mobile full-screen overlay menu ── */}
+      {/* ── Mobile Menu ── */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -250,22 +259,21 @@ export default function Navbar() {
               transition={{ duration: 0.25 }}
               onClick={() => setMobileOpen(false)}
               className="fixed inset-0 z-50 bg-black/50 lg:hidden"
-              aria-hidden="true"
             />
 
-            {/* Slide-in panel */}
+            {/* Slide Panel */}
             <motion.div
               key="mobile-menu"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
-              transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{
+                duration: 0.3,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
               className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xs flex-col bg-white shadow-2xl lg:hidden"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Navigation menu"
             >
-              {/* Panel header */}
+              {/* Header */}
               <div className="flex items-center justify-between border-b border-[#8C8578/15] px-5 py-4">
                 <Link
                   href="/"
@@ -278,6 +286,7 @@ export default function Navbar() {
                     width={56}
                     height={56}
                   />
+
                   <span
                     className="text-sm font-bold text-[#1a1a1a]"
                     style={{ fontFamily: "var(--font-playfair)" }}
@@ -285,17 +294,18 @@ export default function Navbar() {
                     Providence CIG
                   </span>
                 </Link>
+
                 <button
                   onClick={() => setMobileOpen(false)}
                   aria-label="Close menu"
-                  className="rounded-lg p-2 text-[#7C7C7C] transition hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                  className="rounded-lg p-2 text-[#7C7C7C] transition hover:bg-gray-100"
                 >
                   <X size={22} strokeWidth={2} />
                 </button>
               </div>
 
-              {/* Panel links */}
-              <nav className="flex-1 overflow-y-auto px-4 py-6" aria-label="Mobile navigation">
+              {/* Nav */}
+              <nav className="flex-1 overflow-y-auto px-4 py-6">
                 <ul className="space-y-1">
                   {navLinks.map((link) =>
                     link.children ? (
@@ -304,27 +314,30 @@ export default function Navbar() {
                           onClick={() =>
                             setMobileServicesOpen((prev) => !prev)
                           }
-                          aria-expanded={mobileServicesOpen}
-                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f5f4f2] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f5f4f2]"
                         >
                           {link.label}
+
                           <ChevronDown
                             size={16}
                             strokeWidth={2}
                             className={cn(
-                              "text-[#7C7C7C] transition-transform duration-200",
+                              "transition-transform duration-200",
                               mobileServicesOpen && "rotate-180"
                             )}
                           />
                         </button>
+
                         <AnimatePresence>
                           {mobileServicesOpen && (
                             <motion.ul
-                              key="mobile-services"
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.22, ease: "easeInOut" }}
+                              transition={{
+                                duration: 0.22,
+                                ease: "easeInOut",
+                              }}
                               className="overflow-hidden"
                             >
                               {link.children.map(({ label, href }) => (
@@ -332,7 +345,12 @@ export default function Navbar() {
                                   <Link
                                     href={href}
                                     onClick={() => setMobileOpen(false)}
-                                    className="flex items-center gap-3 rounded-xl py-2.5 pl-10 pr-4 text-sm text-[#7C7C7C] transition hover:bg-[#f5f4f2] hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                                    className={cn(
+                                      "flex items-center gap-3 rounded-xl py-2.5 pl-10 pr-4 text-sm transition",
+                                      pathname === href
+                                        ? "text-[#8B0000]"
+                                        : "text-[#7C7C7C] hover:text-[#8B0000]"
+                                    )}
                                   >
                                     <span className="h-px w-3 bg-[#8B0000]" />
                                     {label}
@@ -348,7 +366,12 @@ export default function Navbar() {
                         <Link
                           href={link.href!}
                           onClick={() => setMobileOpen(false)}
-                          className="block rounded-xl px-4 py-3 text-sm font-medium text-[#1a1a1a] transition hover:bg-[#f5f4f2] hover:text-[#8B0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
+                          className={cn(
+                            "block rounded-xl px-4 py-3 text-sm font-medium transition",
+                            pathname === link.href
+                              ? "text-[#8B0000]"
+                              : "text-[#1a1a1a] hover:text-[#8B0000]"
+                          )}
                         >
                           {link.label}
                         </Link>
@@ -357,22 +380,6 @@ export default function Navbar() {
                   )}
                 </ul>
               </nav>
-
-              {/* Panel footer */}
-              <div className="border-t border-[#8C8578/15] px-5 py-5">
-                <Link
-                  href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="block w-full rounded-xl bg-[#8B0000] py-3 text-center text-sm font-semibold text-white transition hover:bg-[#6e0000] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000]"
-                >
-                  Get in Touch
-                </Link>
-                <address className="mt-4 space-y-1 not-italic text-xs text-[#7C7C7C]">
-                  <p>+237 XXX XXX XXX</p>
-                  <p>cig.providence@gmail.com</p>
-                  <p>Bambui, Cameroon</p>
-                </address>
-              </div>
             </motion.div>
           </>
         )}

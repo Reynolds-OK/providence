@@ -18,7 +18,7 @@ export default function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="/images/broilers-house.png"
+        src="/images/cocks.png"
         alt=""
         fill
         className="object-cover"
@@ -38,13 +38,23 @@ export default function HeroSection() {
         }}
       />
 
+      {/* crosshatch grid overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.025) 39px, rgba(255,255,255,0.025) 40px)",
+        }}
+      />
+
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center px-4 py-24 text-center sm:px-6 lg:px-8">
         {/* Eyebrow */}
         <motion.p
           initial={hidden}
           animate={visible(0)}
-          className="mb-6 font-[family-name:var(--font-inter)] text-xs tracking-[0.25em] text-[#8B0000] uppercase"
+          className="mb-6 font-[family-name:var(--font-inter)] text-xs tracking-[0.25em] text-[#ffffff] uppercase"
         >
           Bambui, Cameroon &nbsp;|&nbsp; Agribusiness
         </motion.p>

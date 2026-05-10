@@ -19,14 +19,14 @@ function RepeatIcon() {
       {/* Circular arrow top */}
       <path
         d="M28 8 A14 14 0 1 1 8 22"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Arrowhead top-right */}
       <path
         d="M24 4 L28 8 L24 12"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -34,14 +34,14 @@ function RepeatIcon() {
       {/* Circular arrow bottom */}
       <path
         d="M12 32 A14 14 0 1 1 32 18"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Arrowhead bottom-left */}
       <path
         d="M16 36 L12 32 L16 28"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -66,7 +66,7 @@ function SlidersIcon() {
         y1="12"
         x2="34"
         y2="12"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -75,7 +75,7 @@ function SlidersIcon() {
         y1="20"
         x2="34"
         y2="20"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -84,14 +84,14 @@ function SlidersIcon() {
         y1="28"
         x2="34"
         y2="28"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Slider handles */}
-      <circle cx="14" cy="12" r="4" stroke="#8B0000" strokeWidth="1.5" fill="#1c1c1e" />
-      <circle cx="24" cy="20" r="4" stroke="#8B0000" strokeWidth="1.5" fill="#1c1c1e" />
-      <circle cx="18" cy="28" r="4" stroke="#8B0000" strokeWidth="1.5" fill="#1c1c1e" />
+      <circle cx="14" cy="12" r="4" stroke="#ffffff" strokeWidth="1.5" fill="#1c1c1e" />
+      <circle cx="24" cy="20" r="4" stroke="#ffffff" strokeWidth="1.5" fill="#1c1c1e" />
+      <circle cx="18" cy="28" r="4" stroke="#ffffff" strokeWidth="1.5" fill="#1c1c1e" />
     </svg>
   );
 }
@@ -109,14 +109,14 @@ function BookSproutIcon() {
       {/* Open book left page */}
       <path
         d="M20 34 Q14 32 8 34 L8 12 Q14 10 20 12 Z"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
       {/* Open book right page */}
       <path
         d="M20 34 Q26 32 32 34 L32 12 Q26 10 20 12 Z"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinejoin="round"
       />
@@ -126,21 +126,21 @@ function BookSproutIcon() {
         y1="12"
         x2="20"
         y2="34"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Plant sprout stem */}
       <path
         d="M20 10 Q20 6 20 4"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Left leaf */}
       <path
         d="M20 7 Q16 5 14 2 Q17 2 20 5"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -148,7 +148,7 @@ function BookSproutIcon() {
       {/* Right leaf */}
       <path
         d="M20 6 Q24 4 26 1 Q23 1 20 4"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -168,29 +168,29 @@ function CommunityIcon() {
       aria-hidden="true"
     >
       {/* Center person head */}
-      <circle cx="20" cy="13" r="5" stroke="#8B0000" strokeWidth="1.5" />
+      <circle cx="20" cy="13" r="5" stroke="#ffffff" strokeWidth="1.5" />
       {/* Center person body */}
       <path
         d="M12 30 Q12 22 20 22 Q28 22 28 30"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Left person head */}
-      <circle cx="9" cy="16" r="4" stroke="#8B0000" strokeWidth="1.5" />
+      <circle cx="9" cy="16" r="4" stroke="#ffffff" strokeWidth="1.5" />
       {/* Left person body */}
       <path
         d="M2 32 Q2 25 9 25 Q13 25 15 27"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
       {/* Right person head */}
-      <circle cx="31" cy="16" r="4" stroke="#8B0000" strokeWidth="1.5" />
+      <circle cx="31" cy="16" r="4" stroke="#ffffff" strokeWidth="1.5" />
       {/* Right person body */}
       <path
         d="M38 32 Q38 25 31 25 Q27 25 25 27"
-        stroke="#8B0000"
+        stroke="#ffffff"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -275,7 +275,7 @@ function StatCounter({
         ) : (
           "0"
         )}
-        <span className="text-[#8B0000]">{suffix}</span>
+        <span className="text-[#ffffff]">{suffix}</span>
       </p>
       <p className="mt-2 max-w-[140px] font-[family-name:var(--font-inter)] text-sm leading-snug text-gray-400">
         {label}

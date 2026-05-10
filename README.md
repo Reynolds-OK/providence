@@ -116,7 +116,7 @@ To deploy manually:
 ## Pending (client to supply)
 
 - [ ] Logo PNG with transparent background
-- [ ] Real phone numbers (replace `+237 XXX XXX XXX`)
+- [ ] Real phone numbers (replace `+237679105237`)
 - [ ] Hero and section photography
 - [ ] Partner logos — MCF FAST and ACE
 - [ ] Social media profile URLs

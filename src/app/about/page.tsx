@@ -188,7 +188,7 @@ export default function AboutPage() {
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
         {/* Background image */}
         <Image
-          src="/images/about-hero.webp"
+          src="/images/about.jpg"
           fill
           className="object-cover"
           alt="Providence CIG farm"

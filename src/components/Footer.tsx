@@ -116,22 +116,29 @@ export default function Footer() {
                 className="text-base font-bold leading-tight text-white"
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
-                Providence CIG
+                <p
+                  className="mt-4 text-sm font-semibold italic leading-relaxed text-[#8C8578]"
+                  style={{ fontFamily: "var(--font-playfair)" }}
+                >
+                  Growing farms.<br />
+                  Feeding families.<br />
+                  Building communities.
+                </p>
               </span>
             </Link>
-            <p
+            {/* <p
               className="mt-4 text-sm font-semibold italic leading-relaxed text-[#8C8578]"
               style={{ fontFamily: "var(--font-playfair)" }}
             >
               Growing farms.<br />
               Feeding families.<br />
               Building communities.
-            </p>
-            <p className="mt-3 text-sm leading-relaxed text-gray-400">
+            </p> */}
+            {/* <p className="mt-3 text-sm leading-relaxed text-gray-400">
               Providence Common Initiative Group is an agribusiness based in
               Bambui, Cameroon, dedicated to sustainable farming, quality feed
               production, and empowering local agricultural entrepreneurs.
-            </p>
+            </p> */}
           </div>
 
           {/* Column 2 — Services */}
@@ -183,10 +190,10 @@ export default function Footer() {
               <p>
                 <span className="text-gray-300">Phone:</span>{" "}
                 <a
-                  href="tel:+237XXXXXXXXX"
+                  href="tel:+237679105237"
                   className="hover:text-white transition-colors"
                 >
-                  +237 XXX XXX XXX
+                  +237679105237
                 </a>
               </p>
               <p>
