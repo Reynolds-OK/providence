@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAdminSave } from "../useAdminSave";
 import {
-  SectionTitle, SaveBar, FormField, TextInput, TextArea, ImageUpload,
+  SectionTitle, SaveBar, FormField, TextInput, TextArea, ImageUpload, Divider,
 } from "../AdminUI";
 import type { SiteContent } from "@/lib/types";
 
@@ -11,18 +11,22 @@ type HeroState = SiteContent["hero"];
 
 export default function HeroEditor() {
   const [data, setData] = useState<HeroState | null>(null);
+  const [logo, setLogo] = useState<string>("");
   const { save, status } = useAdminSave("/api/admin/content");
 
   useEffect(() => {
     fetch("/api/admin/content")
       .then((r) => r.json())
-      .then((c: SiteContent) => setData(c.hero));
+      .then((c: SiteContent) => {
+        setData(c.hero);
+        setLogo(c.logo ?? "/images/logo.png");
+      });
   }, []);
 
   async function handleSave() {
     if (!data) return;
     const full = await fetch("/api/admin/content").then((r) => r.json() as Promise<SiteContent>);
-    save({ ...full, hero: data });
+    save({ ...full, hero: data, logo });
   }
 
   function set(key: keyof HeroState, value: string) {
@@ -34,6 +38,14 @@ export default function HeroEditor() {
   return (
     <div className="max-w-2xl">
       <SectionTitle title="Hero Section" description="The full-screen opening section of the home page." />
+
+      <ImageUpload
+        label="Site Logo"
+        src={logo}
+        onChange={setLogo}
+      />
+
+      <Divider label="Hero Section" />
 
       <ImageUpload
         label="Background Image"

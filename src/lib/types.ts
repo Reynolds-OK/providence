@@ -62,6 +62,7 @@ export interface BottomCTAData {
 }
 
 export interface SiteContent {
+  logo: string;
   hero: HeroData;
   services: ServicesData;
   whyChooseUs: WhyChooseUsData;

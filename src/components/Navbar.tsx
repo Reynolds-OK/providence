@@ -63,7 +63,7 @@ function DesktopDropdown({
 
 /* ─── Main Navbar ────────────────────────────────────────────────────────── */
 
-export default function Navbar() {
+export default function Navbar({ logo }: { logo: string }) {
   const pathname = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
@@ -127,7 +127,7 @@ export default function Navbar() {
             className="group flex items-center gap-3 flex-shrink-0"
           >
             <Image
-              src="/images/logo.png"
+              src={logo}
               alt="Providence CIG Logo"
               width={56}
               height={56}
@@ -281,7 +281,7 @@ export default function Navbar() {
                   className="flex items-center gap-3"
                 >
                   <Image
-                    src="/images/logo.png"
+                    src={logo}
                     alt="Providence CIG Logo"
                     width={56}
                     height={56}

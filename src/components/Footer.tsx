@@ -41,7 +41,7 @@ const socials = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ logo }: { logo: string }) {
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -107,7 +107,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center gap-3 group">
               <Image
-                src="/images/logo.png"
+                src={logo}
                 alt="Providence CIG Logo"
                 width={80}
                 height={80}
