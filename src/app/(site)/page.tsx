@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "Providence CIG is an agribusiness in Bambui, Cameroon, specializing in commercial poultry, custom animal feed, and advisory services for farmers and retailers.",
 };
 
-export default function HomePage() {
-  const content = readJson<SiteContent>("content.json");
-  const testimonials = readJson<Testimonial[]>("testimonials.json");
+export default async function HomePage() {
+  const content = await readJson<SiteContent>("content.json");
+  const testimonials = await readJson<Testimonial[]>("testimonials.json");
 
   return (
     <>

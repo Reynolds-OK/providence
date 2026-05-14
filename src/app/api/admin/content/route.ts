@@ -8,7 +8,7 @@ export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const content = readJson<SiteContent>("content.json");
+  const content = await readJson<SiteContent>("content.json");
   return NextResponse.json(content);
 }
 
@@ -17,6 +17,6 @@ export async function POST(req: Request) {
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const data = await req.json();
-  writeJson("content.json", data);
+  await writeJson("content.json", data);
   return NextResponse.json({ ok: true });
 }

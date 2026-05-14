@@ -4,7 +4,7 @@ import InternshipPageClient from "./InternshipPageClient";
 
 export const dynamic = "force-dynamic";
 
-export default function InternshipPage() {
-  const internTestimonials = readJson<InternTestimonial[]>("intern-testimonials.json");
+export default async function InternshipPage() {
+  const internTestimonials = await readJson<InternTestimonial[]>("intern-testimonials.json");
   return <InternshipPageClient internTestimonials={internTestimonials} />;
 }

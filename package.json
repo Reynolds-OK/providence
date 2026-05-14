@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "create-admin": "node scripts/create-admin.mjs"
+    "create-admin": "node scripts/create-admin.mjs",
+    "seed-blob": "node --env-file=.env.local scripts/seed-blob.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@vercel/blob": "^2.3.3",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.6.0",

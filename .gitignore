@@ -48,3 +48,4 @@ AGENTS.md
 
 # Source assets (not for production)
 /public/other/
+.env*.local

@@ -8,7 +8,7 @@ export async function GET() {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const data = readJson<Testimonial[]>("testimonials.json");
+  const data = await readJson<Testimonial[]>("testimonials.json");
   return NextResponse.json(data);
 }
 
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   const session = await getServerSession(authOptions);
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const data = await req.json() as Testimonial[];
-  writeJson("testimonials.json", data);
+  const data = (await req.json()) as Testimonial[];
+  await writeJson("testimonials.json", data);
   return NextResponse.json({ ok: true });
 }
