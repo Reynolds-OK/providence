@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { cn } from "@/lib/utils";
+import type { TeamMember } from "@/lib/types";
 
 /* ─── Animation helpers ──────────────────────────────────────────────────── */
 
@@ -124,26 +125,6 @@ const values = [
   },
 ];
 
-const team = [
-  {
-    initials: "FD",
-    name: "FD",
-    title: "Founder & Director",
-    bio: "Leads strategy, partnerships, and the overall vision of Providence CIG.",
-  },
-  {
-    initials: "FB",
-    name: "FB",
-    title: "Finance & Business Development Lead",
-    bio: "Drives financial planning, partnerships, and growth strategy.",
-  },
-  {
-    initials: "OM",
-    name: "OM",
-    title: "Operations Manager",
-    bio: "Coordinates logistics, supplier networks, and on-site execution.",
-  },
-];
 
 /* ─── Section wrapper that triggers animation on scroll ─────────────────── */
 
@@ -170,7 +151,7 @@ function AnimatedSection({
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 
-export default function AboutPage() {
+export default function AboutPageClient({ team }: { team: TeamMember[] }) {
   /* story section in-view */
   const { ref: storyRef, inView: storyInView } = useInView({ threshold: 0.12, triggerOnce: true });
   /* values section */

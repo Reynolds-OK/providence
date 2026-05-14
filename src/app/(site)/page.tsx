@@ -6,6 +6,10 @@ import HowWeWork from "@/app/_sections/HowWeWork";
 import Testimonials from "@/app/_sections/Testimonials";
 import PartnersStrip from "@/app/_sections/PartnersStrip";
 import BottomCTA from "@/app/_sections/BottomCTA";
+import { readJson } from "@/lib/content";
+import type { SiteContent, Testimonial } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Providence CIG | Poultry, Animal Feed & Agribusiness Advisory in Bambui, Cameroon",
@@ -14,15 +18,18 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const content = readJson<SiteContent>("content.json");
+  const testimonials = readJson<Testimonial[]>("testimonials.json");
+
   return (
     <>
-      <HeroSection />
-      <ServicesStrip />
-      <WhyChooseUs />
-      <HowWeWork />
-      <Testimonials />
+      <HeroSection data={content.hero} />
+      <ServicesStrip data={content.services} />
+      <WhyChooseUs data={content.whyChooseUs} />
+      <HowWeWork data={content.howWeWork} />
+      <Testimonials data={testimonials} />
       <PartnersStrip />
-      <BottomCTA />
+      <BottomCTA data={content.bottomCTA} />
     </>
   );
 }

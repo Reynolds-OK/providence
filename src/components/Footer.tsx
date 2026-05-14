@@ -253,6 +253,15 @@ export default function Footer() {
             >
               Terms of Use
             </Link>
+            <span aria-hidden="true" className="text-gray-700">
+              |
+            </span>
+            <Link
+              href="/login"
+              className="hover:text-gray-300 transition-colors"
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </div>

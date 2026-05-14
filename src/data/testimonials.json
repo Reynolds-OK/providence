@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "quote": "Their eggs arrive fresh, on time, every single time. As a market retailer, consistency is everything and these people deliver without fail.",
+    "name": "Ama Ngwa",
+    "role": "Market Retailer",
+    "location": "Bamenda",
+    "initials": "AN"
+  },
+  {
+    "id": "2",
+    "quote": "I came to them with no idea how to properly feed my goat herd. They put together a custom blend and within a few weeks, the difference in my animals was visible. Remarkable service.",
+    "name": "Emmanuel Fon",
+    "role": "Livestock Farmer",
+    "location": "Bambui",
+    "initials": "EF"
+  },
+  {
+    "id": "3",
+    "quote": "The advisory team helped me write my first real business plan for my poultry farm. I secured financing I had been trying to access for over two years. These people changed my trajectory.",
+    "name": "Carine Mbah",
+    "role": "Poultry Entrepreneur",
+    "location": "Kumbo",
+    "initials": "CM"
+  }
+]

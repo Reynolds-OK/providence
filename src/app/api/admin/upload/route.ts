@@ -1,0 +1,26 @@
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { NextResponse } from "next/server";
+import { writeFile } from "fs/promises";
+import path from "path";
+
+export async function POST(req: Request) {
+  const session = await getServerSession(authOptions);
+  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const formData = await req.formData();
+  const file = formData.get("file") as File | null;
+
+  if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
+
+  const bytes = await file.arrayBuffer();
+  const buffer = Buffer.from(bytes);
+
+  const ext = file.name.split(".").pop() ?? "jpg";
+  const filename = `upload-${Date.now()}.${ext}`;
+  const filepath = path.join(process.cwd(), "public", "images", filename);
+
+  await writeFile(filepath, buffer);
+
+  return NextResponse.json({ url: `/images/${filename}` });
+}

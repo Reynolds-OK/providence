@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "initials": "FD",
+    "name": "FD",
+    "title": "Founder & Director",
+    "bio": "Leads strategy, partnerships, and the overall vision of Providence CIG.",
+    "photo": null
+  },
+  {
+    "id": "2",
+    "initials": "FB",
+    "name": "FB",
+    "title": "Finance & Business Development Lead",
+    "bio": "Drives financial planning, partnerships, and growth strategy.",
+    "photo": null
+  },
+  {
+    "id": "3",
+    "initials": "OM",
+    "name": "OM",
+    "title": "Operations Manager",
+    "bio": "Coordinates logistics, supplier networks, and on-site execution.",
+    "photo": null
+  }
+]

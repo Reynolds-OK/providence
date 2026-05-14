@@ -6,6 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import { useState, useRef, ChangeEvent, FormEvent } from "react";
 import { cn } from "@/lib/utils";
+import type { InternTestimonial } from "@/lib/types";
 
 /* ─── Animation helpers ──────────────────────────────────────────────────── */
 
@@ -35,15 +36,10 @@ const childFade = {
 function BarnIcon() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Barn roof */}
       <path d="M4 18 L20 6 L36 18" stroke="#8B0000" strokeWidth="1.75" strokeLinejoin="round" />
-      {/* Barn body */}
       <rect x="6" y="18" width="28" height="18" stroke="#8B0000" strokeWidth="1.75" />
-      {/* Barn door arch */}
       <path d="M14 36 L14 26 Q14 22 20 22 Q26 22 26 26 L26 36" stroke="#8B0000" strokeWidth="1.5" fill="#8B0000" fillOpacity="0.07" />
-      {/* Hayloft window */}
       <rect x="17" y="11" width="6" height="5" rx="0.5" stroke="#8B0000" strokeWidth="1.3" />
-      {/* Side windows */}
       <rect x="9" y="22" width="4" height="4" rx="0.5" stroke="#8B0000" strokeWidth="1.2" />
       <rect x="27" y="22" width="4" height="4" rx="0.5" stroke="#8B0000" strokeWidth="1.2" />
     </svg>
@@ -53,14 +49,10 @@ function BarnIcon() {
 function FlaskIcon() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Flask neck */}
       <path d="M15 6 L15 16 L7 30 Q5 34 8 36 L32 36 Q35 34 33 30 L25 16 L25 6" stroke="#8B0000" strokeWidth="1.75" strokeLinejoin="round" fill="#8B0000" fillOpacity="0.06" />
-      {/* Liquid fill */}
       <path d="M10 30 Q9 34 12 35 L28 35 Q31 34 30 30 L23 18 L17 18 Z" fill="#8B0000" fillOpacity="0.12" />
-      {/* Bubbles */}
       <circle cx="17" cy="30" r="1.5" fill="#8B0000" fillOpacity="0.4" />
       <circle cx="23" cy="27" r="1" fill="#8B0000" fillOpacity="0.4" />
-      {/* Stopper / rim */}
       <path d="M13 6 L27 6" stroke="#8B0000" strokeWidth="1.75" strokeLinecap="round" />
     </svg>
   );
@@ -83,13 +75,9 @@ function DocumentGraphIcon() {
 function TruckIcon() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Truck body */}
       <rect x="2" y="14" width="22" height="16" rx="2" stroke="#8B0000" strokeWidth="1.75" fill="#8B0000" fillOpacity="0.06" />
-      {/* Cab */}
       <path d="M24 22 L24 14 L34 14 L38 20 L38 30 L24 30" stroke="#8B0000" strokeWidth="1.75" strokeLinejoin="round" fill="#8B0000" fillOpacity="0.06" />
-      {/* Windscreen */}
       <path d="M25 15 L25 21 L37 21" stroke="#8B0000" strokeWidth="1.3" strokeLinejoin="round" />
-      {/* Wheels */}
       <circle cx="10" cy="30" r="4" stroke="#8B0000" strokeWidth="1.75" />
       <circle cx="10" cy="30" r="1.5" fill="#8B0000" fillOpacity="0.3" />
       <circle cx="30" cy="30" r="4" stroke="#8B0000" strokeWidth="1.75" />
@@ -113,19 +101,16 @@ function LeafIcon() {
 function MentorshipIcon() {
   return (
     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Person 1 */}
       <circle cx="13" cy="10" r="5" stroke="#8B0000" strokeWidth="1.75" />
       <path d="M4 28 C4 22 8 18 13 18 C18 18 22 22 22 28" stroke="#8B0000" strokeWidth="1.75" strokeLinecap="round" />
-      {/* Person 2 */}
       <circle cx="28" cy="12" r="5" stroke="#8B0000" strokeWidth="1.75" />
       <path d="M19 30 C19 24 23 20 28 20 C33 20 37 24 37 30" stroke="#8B0000" strokeWidth="1.75" strokeLinecap="round" />
-      {/* Connection spark */}
       <path d="M18 18 L22 22" stroke="#8B0000" strokeWidth="1.4" strokeLinecap="round" strokeDasharray="2 2" />
     </svg>
   );
 }
 
-/* ─── Data ───────────────────────────────────────────────────────────────── */
+/* ─── Static data ────────────────────────────────────────────────────────── */
 
 const experiences = [
   {
@@ -179,41 +164,6 @@ const programmeDetails = [
     value: "All interns receive a formal certificate of completion and a signed professional reference letter",
   },
   { label: "Applications", value: "Reviewed on a rolling basis with no fixed deadline" },
-];
-
-const testimonials = [
-  {
-    initials: "AGM",
-    name: "ANUBONDEM GODWIN MBOWOH",
-    institution: "University of Buea",
-    department: "4th Year Veterinary Medicine student",
-    quote:
-      "During my one-month placement at Providence CIG Layer Farm in Bafoussam, I observed and participated in day-to-day poultry operations within a commercial production environment. The experience provided practical exposure to farm workflows such as feeding cycles, bird health monitoring, and production coordination. It also offered insight into how operational decisions impact efficiency and output at scale",
-  },
-  {
-    initials: "TKJ",
-    name: "TIENTCHEU KADJI JORDAN",
-    institution: "University of Buea",
-    department: "4th Year Veterinary Medicine student",
-    quote:
-      "I had the opportunity to complete a one-month internship at Providence CIG Layer Farm, Bafoussam branch. During my stay, I gained practical experience in poultry management, feeding systems, bird care, and large-scale production processes. Working closely with Mr. Justin gave me valuable insight into both layer and broiler farming, feed requirements, and profit maximization. I am sincerely grateful for the hospitality and knowledge shared with me, and I highly recommend Providence CIG to young Cameroonians interested in gaining hands-on experience in the poultry sector.",
-  },
-  {
-    initials: "NFN",
-    name: "Nforya Fulbert Nfinyoh",
-    institution: "University of Buea",
-    department: "4th Year Veterinary Medicine Student",
-    quote:
-      "My internship at Providence CIG Layer Farm in Bafoussam was one of my best experiences in poultry production and layer farming. I gained practical knowledge in farm management, feed formulation, and productivity improvement for both layers and broilers. The experience also gave me valuable insight into the business side of poultry farming. Today, the knowledge acquired continues to help me as a poultry farmer and consultant. I highly recommend Providence CIG to young agricultural enthusiasts seeking practical experience in poultry production.",
-  },
-  // {
-  //   initials: "YM",
-  //   name: "Yves Mbunwe",
-  //   institution: "Bamenda Polytechnic",
-  //   department: "HND Agriculture, General Operations",
-  //   quote:
-  //     "I came in wanting to understand feed formulation from a business angle. I left with a clear career direction, a strong reference letter, and a network inside an organisation I genuinely respect. Providence CIG treats interns like future colleagues.",
-  // },
 ];
 
 /* ─── Form types ─────────────────────────────────────────────────────────── */
@@ -319,15 +269,17 @@ const inputErrorClass =
 
 /* ─── Page ───────────────────────────────────────────────────────────────── */
 
-export default function InternshipPage() {
-  /* Section in-view refs */
+export default function InternshipPageClient({
+  internTestimonials,
+}: {
+  internTestimonials: InternTestimonial[];
+}) {
   const { ref: philosophyRef, inView: philosophyInView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { ref: expRef, inView: expInView } = useInView({ threshold: 0.08, triggerOnce: true });
   const { ref: detailsRef, inView: detailsInView } = useInView({ threshold: 0.1, triggerOnce: true });
   const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ threshold: 0.08, triggerOnce: true });
   const { ref: formRef, inView: formInView } = useInView({ threshold: 0.05, triggerOnce: true });
 
-  /* Form state */
   const [fields, setFields] = useState<FormFields>({
     fullName: "",
     email: "",
@@ -343,9 +295,7 @@ export default function InternshipPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  function handleChange(
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) {
+  function handleChange(e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
     const { name, value } = e.target;
     setFields((prev) => ({ ...prev, [name]: value }));
     setErrors((prev) => ({ ...prev, [name]: undefined }));
@@ -415,7 +365,6 @@ export default function InternshipPage() {
     if (!validate()) return;
 
     setSubmitting(true);
-    // Simulate async submission
     await new Promise((resolve) => setTimeout(resolve, 1200));
     setSubmitting(false);
     setSubmitted(true);
@@ -427,7 +376,6 @@ export default function InternshipPage() {
           HERO
       ══════════════════════════════════════════════════════════════════ */}
       <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden">
-        {/* Background image */}
         <Image
           src="/images/internship-hero.webp"
           fill
@@ -435,9 +383,7 @@ export default function InternshipPage() {
           alt="Internship at Providence CIG"
           priority
         />
-        {/* Dark overlay */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/60" />
-        {/* Grid texture */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
@@ -642,28 +588,24 @@ export default function InternshipPage() {
             </motion.div>
 
             <div className="grid gap-6 lg:grid-cols-2">
-              {testimonials.map(({ initials, name, institution, department, quote }) => (
+              {internTestimonials.map(({ id, initials, name, institution, department, quote }) => (
                 <motion.div
-                  key={name}
+                  key={id}
                   variants={childFade}
                   className="flex flex-col gap-6 rounded-2xl bg-white p-8 shadow-sm"
                 >
-                  {/* Quote mark */}
                   <QuoteIcon />
 
-                  {/* Quote text */}
                   <p className="font-[family-name:var(--font-inter)] text-base leading-relaxed text-[#1a1a1a]">
                     &ldquo;{quote}&rdquo;
                   </p>
 
-                  {/* Stars */}
                   <div className="flex items-center gap-1" aria-label="5 out of 5 stars">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <StarIcon key={i} />
                     ))}
                   </div>
 
-                  {/* Author */}
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#8B0000] font-[family-name:var(--font-playfair)] text-sm font-bold text-white">
                       {initials}
@@ -744,7 +686,6 @@ export default function InternshipPage() {
                 noValidate
                 className="space-y-7"
               >
-                {/* Full Name */}
                 <FormInput label="Full Name" id="fullName" error={errors.fullName} required>
                   <input
                     id="fullName"
@@ -758,7 +699,6 @@ export default function InternshipPage() {
                   />
                 </FormInput>
 
-                {/* Email */}
                 <FormInput label="Email Address" id="email" error={errors.email} required>
                   <input
                     id="email"
@@ -772,7 +712,6 @@ export default function InternshipPage() {
                   />
                 </FormInput>
 
-                {/* Institution */}
                 <FormInput label="School / University" id="institution" error={errors.institution} required>
                   <input
                     id="institution"
@@ -786,7 +725,6 @@ export default function InternshipPage() {
                   />
                 </FormInput>
 
-                {/* Graduation Year */}
                 <FormInput label="Graduation Year" id="graduationYear" error={errors.graduationYear} required>
                   <input
                     id="graduationYear"
@@ -801,7 +739,6 @@ export default function InternshipPage() {
                   />
                 </FormInput>
 
-                {/* Preferred Department */}
                 <FormInput label="Preferred Department" id="preferredDept" error={errors.preferredDept} required>
                   <select
                     id="preferredDept"
@@ -826,7 +763,6 @@ export default function InternshipPage() {
                   </select>
                 </FormInput>
 
-                {/* CV Upload */}
                 <div className="flex flex-col gap-1.5">
                   <label
                     htmlFor="cvUpload"
@@ -861,7 +797,6 @@ export default function InternshipPage() {
                       className="sr-only"
                     />
 
-                    {/* Upload icon */}
                     <svg
                       width="32"
                       height="32"
@@ -919,7 +854,6 @@ export default function InternshipPage() {
                   )}
                 </div>
 
-                {/* Submit */}
                 <button
                   type="submit"
                   disabled={submitting}

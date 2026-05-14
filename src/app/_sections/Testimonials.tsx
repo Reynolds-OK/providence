@@ -5,71 +5,18 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-/* ─── Data ───────────────────────────────────────────────────────────────── */
-
-const testimonials = [
-  {
-    quote:
-      "Their eggs arrive fresh, on time, every single time. As a market retailer, consistency is everything and these people deliver without fail.",
-    name: "Ama Ngwa",
-    role: "Market Retailer",
-    location: "Bamenda",
-    initials: "AN",
-  },
-  {
-    quote:
-      "I came to them with no idea how to properly feed my goat herd. They put together a custom blend and within a few weeks, the difference in my animals was visible. Remarkable service.",
-    name: "Emmanuel Fon",
-    role: "Livestock Farmer",
-    location: "Bambui",
-    initials: "EF",
-  },
-  {
-    quote:
-      "The advisory team helped me write my first real business plan for my poultry farm. I secured financing I had been trying to access for over two years. These people changed my trajectory.",
-    name: "Carine Mbah",
-    role: "Poultry Entrepreneur",
-    location: "Kumbo",
-    initials: "CM",
-  },
-];
-
-/* ─── Quotation mark SVG ─────────────────────────────────────────────────── */
+import type { Testimonial } from "@/lib/types";
 
 function QuoteMark() {
   return (
-    <svg
-      width="36"
-      height="28"
-      viewBox="0 0 36 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path
-        d="M0 28 L0 16 C0 7.163 5.373 1.92 16.12 0 L17.88 3.36 C12.787 4.587 10.24 7.147 10.24 11.04 L10.24 12 L16 12 L16 28 L0 28Z"
-        fill="#8B0000"
-        opacity="0.18"
-      />
-      <path
-        d="M20 28 L20 16 C20 7.163 25.373 1.92 36.12 0 L37.88 3.36 C32.787 4.587 30.24 7.147 30.24 11.04 L30.24 12 L36 12 L36 28 L20 28Z"
-        fill="#8B0000"
-        opacity="0.18"
-      />
+    <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 28 L0 16 C0 7.163 5.373 1.92 16.12 0 L17.88 3.36 C12.787 4.587 10.24 7.147 10.24 11.04 L10.24 12 L16 12 L16 28 L0 28Z" fill="#8B0000" opacity="0.18" />
+      <path d="M20 28 L20 16 C20 7.163 25.373 1.92 36.12 0 L37.88 3.36 C32.787 4.587 30.24 7.147 30.24 11.04 L30.24 12 L36 12 L36 28 L20 28Z" fill="#8B0000" opacity="0.18" />
     </svg>
   );
 }
 
-/* ─── Card Component ─────────────────────────────────────────────────────── */
-
-function TestimonialCard({
-  quote,
-  name,
-  role,
-  location,
-  initials,
-}: (typeof testimonials)[0]) {
+function TestimonialCard({ quote, name, role, location, initials }: Testimonial) {
   return (
     <div className="flex h-full flex-col rounded-2xl bg-white p-8 shadow-md">
       <div className="mb-5">
@@ -86,9 +33,7 @@ function TestimonialCard({
           {initials}
         </div>
         <div>
-          <p className="font-[family-name:var(--font-inter)] text-sm font-semibold text-[#1c1c1e]">
-            {name}
-          </p>
+          <p className="font-[family-name:var(--font-inter)] text-sm font-semibold text-[#1c1c1e]">{name}</p>
           <p className="font-[family-name:var(--font-inter)] text-xs text-[#7C7C7C]">
             {role} &mdash; {location}
           </p>
@@ -97,8 +42,6 @@ function TestimonialCard({
     </div>
   );
 }
-
-/* ─── Component ──────────────────────────────────────────────────────────── */
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -109,23 +52,12 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.65, ease: EASE },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
 };
 
-export default function Testimonials() {
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 4500, stopOnInteraction: true })
-  );
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: "start" },
-    [autoplayPlugin.current]
-  );
-
+export default function Testimonials({ data }: { data: Testimonial[] }) {
+  const autoplayPlugin = useRef(Autoplay({ delay: 4500, stopOnInteraction: true }));
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [autoplayPlugin.current]);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = useCallback(() => {
@@ -137,9 +69,7 @@ export default function Testimonials() {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect);
     onSelect();
-    return () => {
-      emblaApi.off("select", onSelect);
-    };
+    return () => { emblaApi.off("select", onSelect); };
   }, [emblaApi, onSelect]);
 
   const scrollTo = useCallback(
@@ -147,15 +77,11 @@ export default function Testimonials() {
     [emblaApi]
   );
 
-  const { ref: sectionRef, inView } = useInView({
-    threshold: 0.15,
-    triggerOnce: true,
-  });
+  const { ref: sectionRef, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
   return (
     <section className="bg-[#f5f4f2] px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
       <div className="mx-auto max-w-7xl">
-        {/* Header */}
         <div className="mb-12 text-center">
           <p className="mb-3 font-[family-name:var(--font-inter)] text-xs font-semibold tracking-[0.22em] text-[#8B0000] uppercase">
             What Our Clients Say
@@ -165,7 +91,6 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Desktop: 3-col grid */}
         <motion.div
           ref={sectionRef}
           variants={containerVariants}
@@ -173,40 +98,32 @@ export default function Testimonials() {
           animate={inView ? "visible" : "hidden"}
           className="hidden gap-6 md:grid md:grid-cols-3"
         >
-          {testimonials.map((t) => (
-            <motion.div key={t.name} variants={cardVariants}>
+          {data.map((t) => (
+            <motion.div key={t.id} variants={cardVariants}>
               <TestimonialCard {...t} />
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Mobile: Embla carousel */}
         <div className="md:hidden">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex gap-4">
-              {testimonials.map((t) => (
-                <div
-                  key={t.name}
-                  className="min-w-0 flex-[0_0_90%] pl-1"
-                  style={{ paddingRight: "1rem" }}
-                >
+              {data.map((t) => (
+                <div key={t.id} className="min-w-0 flex-[0_0_90%] pl-1" style={{ paddingRight: "1rem" }}>
                   <TestimonialCard {...t} />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Dot indicators */}
           <div className="mt-6 flex justify-center gap-2">
-            {testimonials.map((_, index) => (
+            {data.map((_, index) => (
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8B0000] ${
-                  selectedIndex === index
-                    ? "w-6 bg-[#8B0000]"
-                    : "w-2 bg-[#8B0000]/25"
+                  selectedIndex === index ? "w-6 bg-[#8B0000]" : "w-2 bg-[#8B0000]/25"
                 }`}
               />
             ))}

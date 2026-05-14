@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "eyebrow": "Cameroon | Agribusiness",
+    "headline": "From the Farm.\nFor the Future.",
+    "subheadline": "We produce quality poultry, craft customized animal feed, and advise farmers who are ready to grow.",
+    "primaryCTA": "Explore What We Do",
+    "secondaryCTA": "Talk to Us",
+    "backgroundImage": "/images/upload-1778726303322.png"
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "headline": "Agriculture Built On Trust, Quality & Innovation",
+    "subheadline": "From poultry production to livestock nutrition and agricultural consulting, Providence CIG delivers reliable solutions designed for growth and sustainability.",
+    "cards": [
+      {
+        "image": "/images/poultry.jpg",
+        "title": "Poultry Production",
+        "description": "Fresh eggs and quality broilers, supplied reliably to retailers and wholesalers across the region.",
+        "href": "/services/poultry",
+        "type": "Product"
+      },
+      {
+        "image": "/images/feed.jpg",
+        "title": "Custom Animal Feed",
+        "description": "Specifically formulated feed blends, engineered around your specific livestock and production goals.",
+        "href": "/services/feed",
+        "type": "Product"
+      },
+      {
+        "image": "/images/poultry-advisory.jpg",
+        "title": "Poultry Farming Advisory",
+        "description": "Business guidance for farmers who are ready to move from survival to scale.",
+        "href": "/services/advisory",
+        "type": "Service"
+      }
+    ]
+  },
+  "whyChooseUs": {
+    "eyebrow": "Why Farmers and Retailers Trust Us",
+    "headline": "Built on the Ground. Driven by Results.",
+    "body": "We're not just another agricultural supplier. We produce eggs, formulate feed, and work closely with farmers who are serious about growing. Every product we put out and every advisory session we hold is tied to one goal: making agriculture more productive and more profitable. We understand the challenges that come with farming here, and we're built to help you work through them.",
+    "differentiators": [
+      {
+        "id": "consistent-supply",
+        "title": "Consistent Supply",
+        "description": "We maintain production standards that retailers and wholesalers can depend on, season after season, without interruption."
+      },
+      {
+        "id": "custom-first",
+        "title": "Custom-First Approach",
+        "description": "No two farms are the same, so we don't treat them that way. Our feed formulations and advisory programmes are built around your specific situation and what your farm actually needs."
+      },
+      {
+        "id": "grounded-expertise",
+        "title": "Grounded Expertise",
+        "description": "Our team combines hands-on agricultural experience with real business acumen. We understand both the field and the market."
+      },
+      {
+        "id": "community-core",
+        "title": "Community at the Core",
+        "description": "We are invested in the long-term prosperity of the communities around us, not just the next transaction. Our logo says it best: we grow together."
+      }
+    ],
+    "stats": [
+      {
+        "end": 10000,
+        "suffix": "+",
+        "label": "Eggs Produced Weekly",
+        "duration": 2.5
+      },
+      {
+        "end": 30,
+        "suffix": "+",
+        "label": "Custom Feed Formulations",
+        "duration": 2
+      },
+      {
+        "end": 100,
+        "suffix": "+",
+        "label": "Farmers Advised & Supported",
+        "duration": 2
+      },
+      {
+        "end": 2,
+        "suffix": "",
+        "label": "International Funding Partners",
+        "duration": 1.5
+      }
+    ]
+  },
+  "howWeWork": {
+    "eyebrow": "How It Works",
+    "headline": "Simple Steps. Serious Results.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Reach Out",
+        "description": "Tell us what you need. Whether you are a retailer, a farmer, or an aspiring agripreneur, we are ready to listen."
+      },
+      {
+        "number": "02",
+        "title": "Consult",
+        "description": "We sit with you, in person or remotely, to understand your operation, your goals, and the specific gaps we need to address together."
+      },
+      {
+        "number": "03",
+        "title": "Deliver",
+        "description": "From fresh poultry supply to a custom feed batch to a full business roadmap, we execute with precision and care."
+      },
+      {
+        "number": "04",
+        "title": "Grow Together",
+        "description": "We do not disappear after the first delivery or session. We follow up, iterate, and grow alongside you."
+      }
+    ]
+  },
+  "bottomCTA": {
+    "headline": "Ready to Work With Us?",
+    "body": "Whether you need a reliable poultry supplier, a precision-formulated feed solution, or expert business guidance for your farm, we are here and we are ready.",
+    "buttonText": "Contact Us Today"
+  }
+}
