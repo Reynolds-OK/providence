@@ -78,7 +78,7 @@ export default function AdminSidebar({ email }: { email?: string | null }) {
         )}
         <button
           onClick={() => signOut({ callbackUrl: "/login" })}
-          className="w-full rounded-lg border border-gray-200 px-3 py-2 font-[family-name:var(--font-inter)] text-sm text-[#4a4a4a] transition-colors hover:border-[#8B0000]/30 hover:text-[#8B0000] focus:outline-none"
+          className="w-full rounded-lg border border-gray-200 px-3 py-2 font-[family-name:var(--font-inter)] text-sm text-[#4a4a4a] transition-colors hover:border-[#8B0000]/30 hover:text-[#8B0000] focus:outline-none cursor-pointer"
         >
           Sign out
         </button>
